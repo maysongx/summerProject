@@ -1,0 +1,49 @@
+html-webpack-plugin：动态生成html文件并自动引入js文件：静态文件无需加载js或css文件，通过设置入口文件可以将
+js文件自动添加进去，相关的css文件在js中导入。同时修改生成的js文件命名规则，利用hash码命名js文件。没有改动时可以让浏览器缓存内容，当有改动重新部署后可以让浏览器缓存失效；
+
+cleanWebpackPlugin：主要是用来清除重复文件，生成最新的的插件
+（主要是输出文件，每次编译一次，就会生成一个不同的带有hash值的文件）
+
+extractTextWebpackPlugin：代码分离插件，主要将css插件从js文件里面分离出来
+
+purifycssWebpack和glob： 消除html中不用的选择器，如果使用的话，在public里面append的html会找不到数据
+进而不加载样式文件（待定问题）
+
+postcss.config.js：配置自动添加厂商前缀（不起作用）
+
+optimize-css-assets-webpack-plugin：压缩css文件
+
+optimization：webpack优化
+这节课讲解webpack4打包多页面应用过程中的提取公共代码部分。
+相比于webpack3，4.0版本用optimization.splitChunks配置替换了3.0版本的CommonsChunkPlugin插件。
+在使用和配置上，更加方便和清晰。
+minimize：默认为true，效果就是压缩js代码。
+https://segmentfault.com/a/1190000017066322
+splitChunks.chunks：将选择哪些块进行优化。当提供一个字符串，有效值为all，async和initial。
+提供all可以特别强大，因为这意味着即使在异步和非异步块之间也可以共享块。
+
+打包单页应用中的代码分割和代码懒加载
+不同于多页面应用的提取公共代码，单页面的代码分割和懒加载不是通过webpack配置来实现的，而是通过webpack的写法和内置函数实现的
+目前webpack针对此功能提供了2中方法
+1.  import(): 引入并且自动执行相关 js 代码
+2.  require.ensure(): 引入但需要手动执行相关 js 代码
+
+懒加载的问题：https://www.jianshu.com/p/c3fe8c8c5c7c
+
+
+热更新必须有以下5点：
+1.引入webpack
+2.output里加publicPath
+3.devServer中增加hot:true
+4.devServer中增加hotOnly:true
+5.在plugins中配置 new webpack.HotModuleReplacementPlugin()
+
+
+"prod": "webpack --env production  --colors",
+
+https://blog.csdn.net/weixin_42474202/article/details/82635138
+https://blog.csdn.net/SeaSunExpect/article/details/78363400
+http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html
+https://www.jianshu.com/p/60dc2c5f5911
+https://www.webpackjs.com/guides/environment-variables/
+

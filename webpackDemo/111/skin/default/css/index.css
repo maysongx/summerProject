@@ -1,0 +1,146 @@
+body {
+  background-color: #fafafa; }
+
+.top-nav-info {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #f03744;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 0px 20px; }
+  .top-nav-info .leftIcon {
+    position: absolute;
+    left: 10px;
+    top: 0; }
+  .top-nav-info .rightIcon {
+    position: absolute;
+    right: 10px;
+    top: 0; }
+  .top-nav-info .top-nav-text {
+    text-align: center;
+    width: 100%; }
+
+.text-icon {
+  position: relative;
+  top: 0px;
+  cursor: pointer;
+  font-size: 14px; }
+
+.container-percent {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 20px auto 90px;
+  background-color: white;
+  border: 1px #f0f0f0 solid;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0px 10px; }
+
+.bigTitle {
+  font-weight: bold;
+  font-size: 40px;
+  margin: 28px 0px; }
+
+.commonModalDialog {
+  min-width: 320px;
+  padding: 0 !important; }
+  .commonModalDialog .modal-dialog {
+    height: 80%;
+    min-width: 320px; }
+    .commonModalDialog .modal-dialog .modal-content {
+      height: 80%;
+      background-color: #fafafa;
+      padding: 0; }
+      .commonModalDialog .modal-dialog .modal-content .modal-header {
+        padding: 0;
+        margin: 0; }
+        .commonModalDialog .modal-dialog .modal-content .modal-header .btnClose {
+          position: absolute;
+          right: -42px;
+          top: 0px;
+          opacity: unset;
+          background-color: white;
+          width: 30px;
+          font-size: 40px;
+          height: 30px;
+          text-align: center;
+          cursor: pointer;
+          line-height: 30px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%; }
+      .commonModalDialog .modal-dialog .modal-content .modal-body {
+        padding: 0;
+        margin: 0;
+        max-height: calc(100% - 45px);
+        overflow-y: auto; }
+
+@media only screen and (max-width: 767px) {
+  .commonModalDialog .modal-dialog .modal-content {
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
+
+  .settingDialog .modal.fade .modal-dialog {
+    transform: translate3d(0, 100vh, 0); }
+  .settingDialog .modal.in .modal-dialog {
+    transform: translate3d(0, 0, 0); }
+  .settingDialog .commonModalDialog .modal-dialog {
+    margin: 0;
+    height: calc(100%); }
+    .settingDialog .commonModalDialog .modal-dialog .modal-content {
+      height: calc(100%);
+      position: absolute;
+      bottom: 0; } }
+.settingDialog {
+  display: none; }
+  .settingDialog .setting {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .settingDialog .setting .perItem {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-bottom: 1px #f0f0f0 solid;
+      height: 44px;
+      line-height: 44px; }
+      .settingDialog .setting .perItem .tagIcon {
+        position: absolute;
+        left: 16px;
+        top: 4px; }
+        .settingDialog .setting .perItem .tagIcon .text-icon {
+          font-size: 20px;
+          color: #f03744; }
+      .settingDialog .setting .perItem .text {
+        font-size: 16px;
+        padding-left: 46px; }
+  .settingDialog .commonModalDialog .modal-dialog .modal-content {
+    height: 90px !important;
+    overflow: hidden !important;
+    background-color: white; }
+    .settingDialog .commonModalDialog .modal-dialog .modal-content .modal-body {
+      height: 100% !important;
+      max-height: calc(100%) !important; }
+
+/*# sourceMappingURL=index.css.map */
