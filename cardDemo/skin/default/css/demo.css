@@ -1,0 +1,42 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/myproject\/skin\/default\/css\/demo\.scss}line{font-family:\0000314}}
+.demo .infoList {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 30px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/myproject\/skin\/default\/css\/demo\.scss}line{font-family:\0000318}}
+.demo .infoList .dqd-sentence-facet-sgp15 {
+  margin: 30px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/myproject\/skin\/default\/css\/demo\.scss}line{font-family:\0000322}}
+.demo .infoList .dqd-sentence-facet-sgp15 .info1 textarea {
+  width: 100%;
+  min-height: 60px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px #8e8c8c solid;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/myproject\/skin\/default\/css\/demo\.scss}line{font-family:\0000332}}
+.demo .infoList .dqd-sentence-facet-sgp15 .info2 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #ffd78f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/myproject\/skin\/default\/css\/demo\.scss}line{font-family:\0000346}}
+.demo .infoList .dqd-sentence-facet-sgp15 .info2 .contInfo {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
