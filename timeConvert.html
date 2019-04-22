@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>时间戳转换</title>
+    <meta name="keywords" content="关键字"/>
+    <meta name="description" content="描述"/>
+    <style type="text/css">
+        .wrap {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .perItem{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="perItem">
+        <div class="tag">当前时间：</div>
+        <div class="time1"></div>
+    </div>
+    <div class="perItem">
+        <div class="tag">往前推7天：</div>
+        <div class="time2"></div>
+    </div>
+    <div class="perItem">
+        <div class="tag">往前推3小时：</div>
+        <div class="time3"></div>
+    </div>
+    <div class="perItem">
+        <div class="tag">往后推一个月：</div>
+        <div class="time4"></div>
+    </div>
+</div>
+<script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $.timeConvert = {
+            init: function () {
+                $.timeConvert.initDateTime();
+
+                // //往后推17天 2周时间
+                // var date = new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000);
+                // var Year = date.getFullYear();
+                // var m = date.getMonth() + 1;
+                // var Month = m < 10 ? '0' + m : m;
+                // var d = date.getDate();
+                // var Day = d < 10 ? '0' + d : d;
+
+
+            },
+            convertTime: function (time) {
+                var curTime = '';
+                var Year = time.getFullYear();//年
+                //月
+                var m = time.getMonth() + 1;
+                var Month = m < 10 ? '0' + m : m;
+                //日
+                var d = time.getDate();
+                var Day = d < 10 ? '0' + d : d;
+                //小时
+                var hours = time.getHours() < 10 ? '0' + time.getHours() : time.getHours();
+                //分钟
+                var minutes = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes();
+                //秒
+                var seconds = time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds();
+
+                curTime = Year.toString() + "-" + Month.toString() + "-" + Day.toString() + " " + hours.toString() + ":" + minutes.toString() + ":" + seconds.toString();
+                return curTime;
+            },
+
+            initDateTime: function () {
+                var nowDate = new Date();
+
+                //当天
+                var endTime = new Date(nowDate.getTime());
+                var m1 = $.timeConvert.convertTime(endTime);
+                $('.time1').text(m1);
+
+                //或者直接格式化
+                $('.time1').text(new Date().Format('yyyy-MM-dd'));
+
+
+                //往前推7天
+                var startTime = new Date(nowDate.getTime() - 24 * 60 * 60 * 7 * 1000);
+                var m2 = $.timeConvert.convertTime(startTime);
+                $('.time2').text(m2);
+
+                //往前推3个小时
+                var startTime = new Date(nowDate.getTime() - 60 * 60 * 3 * 1000);
+                var m3 = $.timeConvert.convertTime(startTime);
+                $('.time3').text(m3);
+
+                //往后推一个月
+                var startTime = new Date(nowDate.getTime() + 31 * 24 * 60 * 60 * 1000);
+                var m4 = $.timeConvert.convertTime(startTime);
+                $('.time4').text(m4);
+
+            }
+        }
+        $.timeConvert.init();
+    });
+</script>
+</body>
+
+</html>

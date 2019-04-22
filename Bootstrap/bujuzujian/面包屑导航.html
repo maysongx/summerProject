@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Bootstrap面包屑导航</title>
+		<!-- 包含头部信息用于适应不同设备 -->
+		<!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width 可以确保它能正确呈现在不同设备上-->
+		<!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+		<!--在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。
+        通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。
+        这样禁用缩放功能后，用户只能滚动屏幕，就能让您的网站看上去更像原生应用的感觉。-->
+		<meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no" />
+		<!--百度的静态资源库的 CDN 服务，访问速度更快、加速效果更明显、没有速度和带宽限制、永久免费,引入代码如下-->
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+	</head>
+
+	<body>
+		<div class="content">
+			<h4>面包屑导航（Breadcrumbs）:面包屑导航（Breadcrumbs）是一种基于网站层次信息的显示方式</h4> Bootstrap 中的面包屑导航（Breadcrumbs）是一个简单的带有 .breadcrumb 类的无序列表。分隔符会通过 CSS（bootstrap.min.css）中class 自动被添加：<br />
+			<img src="../images/面包屑导航.png" /><br />
+			<ol class="breadcrumb">
+				<li>
+					<a>home</a>
+				</li>
+				<li>
+					<a>2013年</a>
+				</li>
+				<li>
+					<a>10月</a>
+				</li>
+			</ol>
+		</div>
+	</body>
+
+</html>

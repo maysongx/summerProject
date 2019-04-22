@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+    <meta name="keywords" content="关键字"/>
+    <meta name="description" content="描述"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="/skin/default/lib/bootstrap-v3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/skin/default/lib/bootstrap-v3.3.7/css/bootstrap-responsive.css"/>
+
+    <style>
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .offet_text [class*="span"] {
+            background-color: #eee;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            min-height: 40px;
+            line-height: 40px;
+        }
+
+        /*设置bootstrapicon的位置*/
+
+        .icon_set:before {
+            position: relative;
+            top: 8px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid text-center">
+        <h1>栅格布局</h1>
+        <div class="col-sm-4">
+            <h1>heading1</h1>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui.</p>
+            <span class="btn btn-default">Learn More...</span>
+        </div>
+        <div class="col-sm-4">
+            <h1>heading2</h1>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui.</p>
+            <span class="btn btn-default">Learn More...</span>
+        </div>
+        <div class="col-sm-4">
+            <h1>heading3</h1>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui.</p>
+            <span class="btn btn-default">Learn More...</span>
+        </div>
+    </div>
+
+    <div class="visible-xs row-fluid">
+        <h1>这里的内容是 手机 设备时，才显示的</h1>
+    </div>
+    <div class="visible-sm row-fluid">
+        <h1>这里的内容是 平板 设备时，才显示的</h1>
+    </div>
+    <div class="visible-lg row-fluid">
+        <h1>这里的内容是 桌面（中等屏幕） 设备时，才显示的</h1>
+
+    </div>
+
+    <h1>
+        <abbr title="这是完整的内容">鼠标放上去显示全部的内容数据</abbr>
+    </h1>
+
+
+    <table class="table table-hover table-bordered table-striped text-center">
+        <caption class="text-center">人员统计</caption>
+        <tbody>
+        <tr>
+            <th class="text-center">姓名</th>
+            <th class="text-center">性别</th>
+            <th class="text-center">年龄</th>
+        </tr>
+        <tr>
+            <td>宋</td>
+            <td>女</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>宋宋</td>
+            <td>男</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>宋宋宋</td>
+            <td>女</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>宋宋宋宋</td>
+            <td>男</td>
+            <td>20</td>
+        </tr>
+        </tbody>
+    </table>
+    <img style="width:500px;height:500px;" class="img-circle" src='/skin/default/images/banner1.jpg'/>
+    <br/>
+    <br/>
+    <h1><i class="icon-home">图标设置</i></h1>
+    <h1 class="glyphicon glyphicon-chevron-down icon_set">图标设置</h1>
+</div>
+
+</body>
+
+</html>

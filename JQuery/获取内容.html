@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>Jquery获取元素的值</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+
+</head>
+
+<body>
+    <div class="public">
+        <p>
+            text() - 设置或返回所选元素的文本内容 html() - 设置或返回所选元素的内容（包括 HTML 标记） val() - 设置或返回表单字段的值
+        </p>
+        <p id="test">This is some <b>bold</b> text in a paragraph</p>
+        <button id="btn1">Show Text</button>
+        <button id="btn2">Show HTML</button>
+        <a href="www.baidu.com">百度一下</a>
+    </div>
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <!--页面尾部加载公共js结束-->
+
+    <script type="text/javascript ">
+        $(function () {
+            $("#btn1").click(function () {
+                alert("Text: " + $("#test").text() + $("a").attr("href"));
+            });
+            $("#btn2").click(function () {
+                alert("HTML: " + $("#test").html());
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+1. css媒介查询临界点（7个范围设置）
+html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+
+3. 设计原则：文字流式（fluid）、控件弹性（flexible）、图片等比缩放（scale）
+4. 网易新闻：rem取值设计理念 
+   (1)设置body元素的宽度：
+     如果设计稿基于iphone6，横向分辨率为750，body的width为750 / 100 = 7.5rem
+     如果设计稿基于iphone4/5，横向分辨率为640，body的width为640 / 100 = 6.4rem
+   (2)动态设置页面font-size:
+     var deviceWidth = document.documentElement.clientWidth;
+     if(deviceWidth > 640) deviceWidth = 640;
+     document.documentElement.style.fontSize = deviceWidth / 6.4 + 'px';
+      动态设置font-size结果展示：
+        deviceWidth = 320，font-size = 320 / 6.4 = 50px
+        deviceWidth = 375，font-size = 375 / 6.4 = 58.59375px
+        deviceWidth = 414，font-size = 414 / 6.4 = 64.6875px
+        deviceWidth = 500，font-size = 500 / 6.4 = 78.125px
+   (3)布局设置的时候，设计图标注的尺寸除以100得到css中的尺寸：：如果一个div的设计稿标注图是100px*50px，那么使用rem表示为：1rem*0.5rem  
+   (4)font-size可能需要额外的媒介查询，并且font-size不能使用rem，如网易的设置：
+      @media screen and (max-width:321px){
+            .m-navlist{font-size:15px}}
+
+      @media screen and (min-width:321px) and (max-width:400px){
+            .m-navlist{font-size:16px}}
+
+     @media screen and (min-width:400px){
+            .m-navlist{font-size:18px}}
+    (5)如果采用网易这种做法，视口要如下设置
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">        
+
+5. 淘宝设计理念
+    (1)视口要如下设置
+       <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    (2)动态设置视口(viewport)的scale
+       var scale = 1 / devicePixelRatio;
+       document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    (3)html元素的font-size的计算公式，font-size = deviceWidth / 10;
+       document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+    (4)元素的尺寸计算（设计稿标注尺寸/该设计稿对应的html的font-size)---各元素的css尺寸=设计稿标注尺寸/设计稿横向分辨率/10
+       设计稿的标注尺寸：150px,该设计稿对应的html的font-size=750/10=75,那么宽度=150/75=2rem
+    (5)font-size可能需要额外的媒介查询，并且font-size不能使用rem，与上面的网易的设置相同   
+       
+6. 淘宝设计步骤()
+(1)引入库文件和css样式文件：flexible.js和flexible.css
+(2)不需要写viewport,因为flexible会自行处理
+(3)编写css样式
+    1）除font-size外，其它大小都根据750标注稿的尺寸，转换成rem单位的值，转换方法为：标注稿尺寸 / 标注稿基准字体大小；
+    例如：div宽度为120px,那么转换成rem标准为：120/75=1.6rem
+    2）标注稿基准字体大小 = 标注稿宽度 / 10，如标注稿宽为750，标注稿基准字体大小为75；标注稿宽为640，标注稿基准字体大小为64；
+    3）如果需要设置font-size，可跟据html的data-dpr属性来处理，类似下面的写法：
+[data-dpr="2"] p {
+    font-size: 16px;
+}
+
+[data-dpr="3"] p {
+    font-size: 24px;
+}
+
+1.物理像素（physical pixel）
+一个物理像素是显示器（手机屏幕）上最小的物理显示物理单元，在操作系统的调度下，
+每一个设备都有自己的颜色值和亮度值。
+
+2.设备独立像素（density-independent pixel）
+设备独立像素（也叫密度无关像素），可以认为是计算机坐标系统中得一个点，
+这个点代表一个可以由程序使用的虚拟像素（比如：css像素），然后由相关系统转换为物理像素。
+
+3.设备像素比（device pixel ratio）
+设备像素比(简称dpr)定义了物理像素和设备独立像素的对应关系
+设备像素比＝物理像素／设备独立像素 （在x方向或者y方向）
+
+一般在使用lib-flexible的项目里面很难再实现响应式布局，要是有人有这种综合两者一起使用的想法，可得注意了。
+实际上，这两个方案本质性的东西就不相同，适用的场景也不相同：
+响应式布局的目的是一套代码，能够在手机平板和pc上都能良好展现，适用于网站类的项目；
+而lib-flexible解决的是手机端网页的适配问题，压根不管平板和pc的情况，适用于web app类的项目
+
+淘宝与网易手机端开发总结
+http://www.cnblogs.com/lyzg/p/4877277.html
+
+
+http://www.cnblogs.com/lyzg/p/4877277.html
+http://www.cnblogs.com/lyzg/p/5058356.html#_label0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>BlockUI</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+    <style type="text/css">
+        .showDialoag {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px red solid;
+            background-color: white;
+            display: none;
+        }
+        
+        .showDialoag .close {
+            left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="public">
+        <button>点击 弹出框</button>
+        <div id="showDialoag" class="showDialoag">
+            对话框显示内容部分
+            <span class="close">关闭</span>
+        </div>
+    </div>
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/lib/blockUI/js/jquery.blockUI.js"></script>
+    <!--页面尾部加载公共js结束-->
+    <script type="text/javascript">
+        $(function () {
+            var left_offset = parseInt($(window).width() - $("#showDialoag").width()) / 2;
+            var top_offset = parseInt($(window).height() - $("#showDialoag").height()) / 2;
+
+            //点击弹出对话框
+            $("button").click(function () {
+                $.blockUI({
+                    //定义弹出的信息为页面的某一个元素
+                    message: $("#showDialoag"),
+                    css: {
+                        'border-radius': '10px',
+                        top: top_offset,
+                        left: left_offset,
+                        cursor: "default",
+                        border: 0
+                    },
+                    //遮罩的样式
+                    overlayCSS: {
+                        cursor: "default",
+                    },
+                    baseZ: 9999,
+                    focusInput: false,
+                    //设置淡入淡出
+                    fadeIn: 700,
+                    fadeOut: 700,
+                    //遮罩时是否禁用键盘和鼠标事件
+                    bindEvents: true,
+                    //是否自动遮罩
+                    showOverlay: true,
+                    //timeout: 2000  //设置失效时间--自动淡出时间                   
+                });               
+            });
+
+            //关闭弹出框功能
+            $(".close").unbind().click(function () {
+                $.unblockUI();
+            });
+        })
+    </script>
+</body>
+
+</html>

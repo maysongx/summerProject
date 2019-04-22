@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Bootstrap轮播--显示4个标题</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.carousel {
+				position: relative;
+				width: 920px;
+				height: 215px;
+				margin-left: 60px;
+			}
+
+			.carousel-inner {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				margin-left: 5px;
+			}
+			/*设置图片和字体样式*/
+
+			div.item_Font_Img {
+				float: left;
+				width: 230px;
+				height: auto;
+			}
+			/*设置项目图片样式*/
+
+			.carousel-inner img {
+				width: 220px !important;
+				height: 180px !important;
+			}
+			/*设置图片下面的字体样式*/
+
+			.itemFont {
+				width: 180px !important;
+				text-align: center;
+				font-size: 20px;
+				margin: 0 auto;
+			}
+			/*设置左侧导航样式*/
+
+			a.carousel-control.left {
+				width: 30px;
+				height: 30px;
+				line-height: 25px;
+				font-size: 40px;
+				color: red;
+				background-image: none;
+				position: relative;
+				left: -13px;
+				top: -137px;
+			}
+			/*设置右侧导航样式*/
+
+			a.carousel-control.right {
+				width: 30px;
+				height: 30px;
+				line-height: 25px;
+				font-size: 40px;
+				color: red;
+				background-image: none;
+				position: relative;
+				left: 902px;
+				top: -143px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+
+			<h1>简单的轮播（Carousel）插件</h1>
+			<div id="myCarousel" class="carousel slide">
+				<!-- 轮播（Carousel）项目 -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="/skin/default/images/banner1.jpg" alt="第一张图片" />
+							</div>
+							<div class="itemFont"><span>标题1</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="/skin/default/images/banner2.jpg" alt="第二张图片" />
+							</div>
+							<div class="itemFont"><span>标题2</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="/skin/default/images/banner3.jpg" alt="第三张图片" />
+							</div>
+							<div class="itemFont"><span>标题3</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="/skin/default/images/banner3.jpg" alt="第四张图片" />
+							</div>
+							<div class="itemFont"><span>标题4</span></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="/skin/default/images/7.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题5</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/8.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题6</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/7.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题7</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/7.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题8</span></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/7.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题9</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/7.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题10</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/8.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题11</span></div>
+						</div>
+						<div class="item_Font_Img">
+							<div class="itemImg">
+								<img src="../../../Images/9.jpg" alt="First slide" />
+							</div>
+							<div class="itemFont"><span>标题12</span></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 轮播（Carousel）导航 -->
+				<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+			</div>
+
+			<div style="width: 800px; height: 1px; margin: 0px auto; padding: 0px; background-color: #D5D5D5; overflow: hidden;"></div>
+
+		</div>
+	</body>
+
+</html>

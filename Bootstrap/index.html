@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>基础知识</title>
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/js/public.js?ver=1.0"></script>
+    <!--css引入：引入当前页面样式文件-->
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/skin/default/lib/bootstrap-v3.3.7/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+    <div class="wrap" style="width:1000px;">
+        <div class="title">
+            <a href="http://www.cnblogs.com/songxia/p/6611687.html">Bootstrap基础知识学习（博客园）</a>
+        </div>
+
+        <div class="wrap">
+            <p class="item">Bootstrap是一个用于快速开发web应用程序和网站的前端框架，主要是基于HTML、CSS、JavaScript的</p>
+            <p class="item">
+                Bootstrap优势：
+                <br /> 1. 移动设备优先：自 Bootstrap 3 起，框架包含了贯穿于整个库的移动设备优先的样式。
+                <br /> 2. 浏览器支持：所有的主流浏览器都支持 Bootstrap。
+                <br /> 3. 响应式设计：Bootstrap 的响应式 CSS 能够自适应于台式机、平板电脑和手机.更多有关响应式设计的内容详见
+                <a href="http://www.runoob.com/bootstrap/bootstrap-v2-responsive-design.html">Bootstrap 响应式设计</a> 。
+            </p>
+            <p class="item">
+                Bootstrap包的内容：
+                <br /> 1. 基本结构：Bootstrap 提供了一个带有网格系统、链接样式、背景的基本结构
+                <br /> 2. CSS：Bootstrap 自带以下特性：全局的 CSS 设置、定义基本的 HTML 元素样式、可扩展的 class，以及一个先进的网格系统
+                <br /> 3. 组件：Bootstrap 包含了十几个可重用的组件，用于创建图像、下拉菜单、导航、警告框、弹出框等等
+                <br /> 4. JavaScript 插件：Bootstrap 包含了十几个自定义的 jQuery 插件。您可以直接包含所有的插件，也可以逐个包含这些插件
+                <br /> 5. 定制：您可以定制 Bootstrap 的组件、LESS 变量和 jQuery 插件来得到您自己的版本
+            </p>
+            <p class="item">
+                Bootstrap包结构：
+                <br />
+
+                <img src="images/Bootstrap.png" />
+            </p>
+            <p class="item">
+                Bootstrap CSS概述：
+                <br /> 移动设备优先是 Bootstrap 3 的最显著的变化。
+                <br /> 为了让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放，需要在网页的 head 之中添加 viewport meta 标签，如下所示：
+                <br />
+                <img src="images/title.png" />
+                <br /> width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width 可以确保它能正确呈现在不同设备上。
+                <br /> initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。
+                <br /> 在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。
+                <br /> 通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用(这种方式我们并不推荐所有网站使用)。这样禁用缩放功能后，用户只能滚
+                <br />
+                <img src="images/meta头部.png" />
+            </p>
+            <p class="item">
+                响应式图像：
+                <br />
+                <img src="images/imgResponse.png" />
+                <br /> 通过添加 img-responsive class 可以让 Bootstrap 3 中的图像对响应式布局的支持更友好
+            </p>
+            <p class="item">
+                避免跨浏览器的不一致：
+                <br /> Bootstrap 使用 Normalize 来建立跨浏览器的一致性。
+                <br /> Normalize.css 是一个很小的 CSS 文件，在 HTML 元素的默认样式中提供了更好的跨浏览器一致性。
+            </p>
+            <p class="item">
+                容器（Container）：
+                <br /> Bootstrap 3 的 container class 用于包裹页面上的内容.默认情况下容器是不可嵌套的
+            </p>
+            <p class="item">
+                浏览器支持：* Bootstrap 支持 Internet Explorer 8 及更高版本的 IE 浏览器。
+                <br />
+            </p>
+            <p class="item">
+                Bootstrap 网格系统：(Grid System)
+                <br /> Bootstrap 提供了一套响应式、移动设备优先的流式网格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列
+                <br />
+                <br />
+                <img src="images/GridSystem1.png" />
+                <br /> Bootstrap网格系统的工作原理
+                <br /> 网格系统通过一系列包含内容的行和列来创建页面布局。下面列出了 Bootstrap 网格系统是如何工作的：
+                <br /> 行必须放置在 .container class 内，以便获得适当的对齐（alignment）和内边距（padding）
+                <br /> 使用行来创建列的水平组
+                <br /> 内容应该放置在列内，且唯有列可以是行的直接子元素。
+                <br /> 预定义的网格类，比如 .row 和 .col-xs-4，可用于快速创建网格布局。LESS 混合类可用于更多语义布局
+                <br /> 列通过内边距（padding）来创建列内容之间的间隙。该内边距是通过 .rows 上的外边距（margin）取负，表示第一列和最后一列的行偏移
+                <br /> 网格系统是通过指定您想要横跨的十二个可用的列来创建的。例如，要创建三个相等的列，则使用三个 .col-xs-4
+                <br />
+                <p style="color:red;">媒体查询:媒体查询是非常别致的"有条件的 CSS 规则"。它只适用于一些基于某些规定条件的 CSS。如果满足那些条件，则应用相应的样式。
+                    <br />
+                </p>
+                Bootstrap 中的媒体查询允许您基于视口大小移动、显示并隐藏内容。下面的媒体查询在 LESS 文件中使用，用来创建 Bootstrap 网格系统中的关键的分界点阈值。
+                <br />
+                <img src="images/媒体查询1.png" />
+                <br /> 我们有时候也会在媒体查询代码中包含 max-width，从而将 CSS 的影响限制在更小范围的屏幕大小之内。
+                <br />
+                <img src="images/媒体查询2.png" />
+                <br /> 网格选项：下表总结了 Bootstrap 网格系统如何跨多个设备工作：
+                <br />
+                <img src="images/网格选项.png" />
+
+            </p>
+            <p class="item">
+                Bootstrap 排版：
+                <br /> Bootstrap 使用 Helvetica Neue、 Helvetica、 Arial 和 sans-serif 作为其默认的字体栈。
+                <br /> 使用 Bootstrap 的排版特性，您可以创建标题、段落、列表及其他内联元素
+                <br />
+                <a href="http://www.runoob.com/bootstrap/bootstrap-typography.html">更多内容</a>
+                <br /> 缩写：鼠标放上去显示全部内容
+                <br />
+                <abbr title="World Wide Web" style="color:red;">WWW</abbr>
+                <br>
+                <abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+                <br /> 地址标签:Address
+                <br />
+                <address>
+                    <strong>Some Company, Inc.</strong></br>
+                    007 street</br>
+                    Some City, State XXXXX</br>
+                    <abbr title="Phone">P:</abbr>
+                    (123) 456-7890
+                </address>
+                <address>
+                    <strong>Full Name</strong><br>
+                    <a href="mailto:#">mailto@somedomain.com</a>
+                </address> 常用的排版类：
+                <br />
+                <img src="images/PaiBan.png" />
+            </p>
+            <p class="item">
+                Bootstrap 代码：
+                <br /> Bootstrap 允许您以两种方式显示代码：
+                <br /> 第一种是 "code" 标签。如果您想要内联显示代码，那么您应该使用 "code" 标签。
+                <br /> 第二种是 "pre" 标签。如果代码需要被显示为一个独立的块元素或者代码有多行，那么您应该使用 "pre" 标签
+            </p>
+            <p class="item">
+                Bootstrap 所提供的一些表格元素
+                <br />
+                <img src="images/表格元素.png" />
+                <br /> Bootstrap 表格类(table类)：
+                <br />
+                <img src="images/表格tablel类.png" />
+                <br />
+                <img src="images/tableClass.png" />
+                <br />
+                <table class="table">
+                    <caption>基本的表格布局</caption>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>城市</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>Bangalore</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>Mumbai</td>
+                        </tr>
+                    </tbody>
+                </table>
+                可选的表格类：
+                <br /> 条纹表格：table-striped--在 tbody内的行上看到条纹
+                <br /> 边框表格：table-bordered--每个元素周围都有边框，且占整个表格是圆角的
+                <br /> 悬停表格：table-hover--当指针悬停在行上时会出现浅灰色背景
+                <br /> 精简表格：table-condensed--行内边距（padding）被切为两半，以便让表看起来更紧凑
+                <br />
+                <br /> 响应式表格:给table添加table-responsive类
+                <br /> 通过把任意的 .table 包在 .table-responsive class 内，您可以让表格水平滚动以适应小型设备（小于 768px）。当在大于 768px 宽的大型设备上查看时，您将看不到任何的差别。
+                <br /> 通过添加 .table-hover class，当指针悬停在行上时会出现浅灰色背景
+            </p>
+            <p class="item">
+                Bootstrap 复辅助类：
+                <br />
+                <a href="http://www.runoob.com/bootstrap/bootstrap-helper-classes.html">辅助类详细</a>
+                <br />
+                <img src="images/常用辅助类.png" />
+            </p>
+            <p class="item">
+                Bootstrap 框架：
+                <br />
+                <img src="images/B1.png" />
+            </p>
+            <p class="item">
+                <h4>Bootstrap 提供了三个可对图片应用简单样式的 class</h4> img-rounded：添加 border-radius:6px 来获得图片圆角。
+                <br /> .img-circle：添加 border-radius:50% 来让整个图片变成圆形。
+                <br /> .img-thumbnail：添加一些内边距（padding）和一个灰色的边框。
+                <br />
+                <div class="item">
+                    <strong>.img-rounded：添加 border-radius:6px 来获得图片圆角。</strong>
+                    <img src="images/huge.jpg" class="img-rounded" />
+                    <br />
+                </div>
+                <div class="item">
+                    <strong>.img-circle：添加 border-radius:500px 来让整个图片变成圆形。</strong>
+                    <img src="images/huge.jpg" class="img-circle" />
+                    <br />
+                </div>
+                <div class="item">
+                    <strong>.img-thumbnail：添加一些内边距（padding）和一个灰色的边框。</strong>
+                    <img src="images/huge.jpg" class="img-thumbnail" />
+                    <br />
+                </div>
+                <div class="item">
+                    <strong>img-thumbnail实现缩略图的功能</strong>
+                    <img src="images/huge.jpg" class="img-thumbnail" />
+                    <br />
+                </div>
+                <div class="item">
+                    <h4>响应式图片：通过在 img标签添加 .img-responsive 类来让图片支持响应式设计。 图片将很好地扩展到父元素</h4>
+                    <img src="images/huge.jpg" class="img-responsive img-circle" />
+                </div>
+            </p>
+            <p class="item">
+                <h4>Bootstrap按钮：任何带有类.btn 的元素都会继承圆角灰色按钮的默认外观</h4> 以下样式可用于a, button, 或 input 元素上：
+                <br />
+                <img src="images/按钮类.png" />
+                <br /> 按钮的大小：
+                <br />
+                <img src="images/按钮的大小.png" />
+                <br /> 按钮激活状态:
+                <br />
+                <img src="images/按钮激活状态.png" />
+                <br />
+                <p>
+                    <button type="button" class="btn btn-default btn-lg ">
+                        默认按钮
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg active">
+                        激活按钮
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg ">
+                        原始按钮
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg active">
+                        激活的原始按钮
+                    </button>
+                </p>
+                按钮禁用状态：
+                <br />
+                <img src="images/按钮禁用状态.png" />
+                <br />
+                <p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        默认按钮
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg" disabled="disabled">
+                        禁用按钮
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg ">
+                        原始按钮
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg" disabled="disabled">
+                        禁用的原始按钮
+                    </button>
+                    <a href="#" class="btn btn-default btn-lg" role="button">
+                    链接
+                </a>
+                    <a href="#" class="btn btn-default btn-lg disabled" role="button">
+                    禁用链接
+                </a>
+                    <a href="#" class="btn btn-primary btn-lg" role="button">
+                    原始链接
+                </a>
+                    <a href="#" class="btn btn-primary btn-lg disabled" role="button">
+                    禁用的原始链接
+                </a>
+                </p>
+                <!-- 标准的按钮 -->
+                <button type="button" class="btn btn-default">默认按钮</button>
+                <!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
+                <button type="button" class="btn btn-primary">原始按钮</button>
+                <!-- 表示一个成功的或积极的动作 -->
+                <button type="button" class="btn btn-success">成功按钮</button>
+                <!-- 信息警告消息的上下文按钮 -->
+                <button type="button" class="btn btn-info">信息按钮</button>
+                <!-- 表示应谨慎采取的动作 -->
+                <button type="button" class="btn btn-warning">警告按钮</button>
+                <!-- 表示一个危险的或潜在的负面动作 -->
+                <button type="button" class="btn btn-danger">危险按钮</button>
+                <!-- 并不强调是一个按钮，看起来像一个链接，但同时保持按钮的行为 -->
+                <button type="button" class="btn btn-link">链接按钮</button>
+            </p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/skin/default/lib/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript ">
+        $(function () {
+            $.public.init();
+        })
+    </script>
+
+
+
+</body>
+
+</html>

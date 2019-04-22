@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>伪类的一般使用</title>
+    <meta name="keywords" content="关键字"/>
+    <meta name="description" content="描述"/>
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/js/public.js?ver=1.0"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.public.init();
+        });
+    </script>
+
+    <style type="text/css">
+        /*鼠标放上去显示样式*/
+
+        li:hover {
+            background-color: #008000;
+        }
+
+        /*a标签的伪类*/
+        /*a:link,a:active,a:visited*/
+
+        li:disabled {
+            /*设置所有被禁用的标签li*/
+        }
+
+        li:enabled {
+            /*设置所有可用的标签li*/
+        }
+
+        li:checked {
+            /*设置所有被选中的标签li*/
+        }
+
+        li:focus {
+            /*设置所有焦点选择的标签li*/
+        }
+
+        li:read-only {
+            /*设置所有可读（只读）的标签li*/
+        }
+
+        /*---------------CSS3新增伪类------------*/
+        /*获取第一个元素*/
+
+        li:first-child {
+            color: red;
+        }
+
+        /*获取最后一个元素*/
+
+        li:last-child {
+            color: red;
+        }
+
+        /*表示li标签的父元素的第二个的li标签*/
+
+        li:nth-child(2) {
+            background-color: yellow;
+        }
+
+        /*表示li标签的父元素的倒数第二个的li标签*/
+
+        li:nth-last-child(2) {
+            background-color: #222222;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <img  src="/CSS3/images/伪类的一般使用.png" />
+    <ul>
+        <li>我听见雨滴落在青青草地</li>
+        <li>我听见远方下课钟声响起</li>
+        <li>可是我没有听见你的声音</li>
+        <li>认真呼唤我姓名</li>
+        <li>爱上你的时候还不懂感情</li>
+        <li>离别了才觉得刻骨铭心</li>
+        <li>为什么没有发现遇见了你</li>
+        <li>是生命最好的事情</li>
+        <li>也许当时忙着微笑和哭泣</li>
+        <li>忙着追逐天空中的流星</li>
+        <li>人理所当然的忘记</li>
+        <li>是谁风里雨里</li>
+        <li>一直默默守护在原地</li>
+    </ul>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>FlexBox布局——圣杯布局</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+
+    <!--head头部公共设置结束-->
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        
+        body>* {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        header,
+        footer {
+            background-color: black;
+            color: white;
+            height: 60px;
+        }
+        
+        section {
+            display: flex;
+        }
+        
+        nav {
+            width: 100px;
+            background-color: deepskyblue;
+            flex: 0 1 auto;
+        }
+        
+        .main {
+            width: 500px;
+            background-color: fuchsia;
+            flex: 1 1 auto;
+        }
+        
+        .sidebar {
+            width: 150px;
+            background-color: firebrick;
+            flex: 0 1 auto;
+        }
+        
+        .cont {
+            display: flex;
+            display: -webkit-flex;
+        }
+        
+        .cont .imgbox {}
+        
+        .cont .imgbox img {
+            width: 150px;
+            height: 150px
+        }
+        
+        .cont .txtbox {}
+    </style>
+
+</head>
+
+<body>
+    <header>头部</header>
+    <section>
+        <nav>导航</nav>
+        <div class="main">
+            <p>主体部分</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <p>我是用了凑行数的</p>
+            <div class="cont">
+                <div class="imgbox">
+                    <img src="/skin/default/images/banner1.jpg" />
+                </div>
+                <div class="txtbox">肯定会该客户肯定会键看到没uYui恶意提u有少许梦想城那么多会计师费开奖号设计滑动回个电话</div>
+            </div>
+        </div>
+        <div class="sidebar">侧边栏</div>
+    </section>
+    <footer>尾部</footer>
+
+
+</body>
+
+</html>

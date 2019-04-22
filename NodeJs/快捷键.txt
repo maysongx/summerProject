@@ -1,0 +1,6 @@
+启动本地服务器：  node server.js
+cls终端 清屏
+ctrl+c 停止终端
+
+
+

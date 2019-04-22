@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>JQuery淡入淡出</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+</head>
+
+<body>
+    <div class="public">
+        <p>Demonstrate fadeToggle() with different speed parameters.</p>
+        <button>Click to fade in/out boxes</button>
+        <br>
+        <br>
+
+        <div id="div1" style="width: 80px; height: 80px; background-color: red;"></div>
+        <br>
+        <div id="div2" style="width: 80px; height: 80px; background-color: green;"></div>
+        <br>
+        <div id="div3" style="width: 80px; height: 80px; background-color: blue;"></div>
+        <br />
+        <hr />
+    </div>
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <!--页面尾部加载公共js结束-->
+
+
+    <script type="text/javascript ">
+        $(function () {
+            $("button").click(function () {
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+                //设置渐变为指定的透明度
+                $("#div3").fadeTo(3000, 0.5);
+            });
+
+            //设置淡出效果
+            $("#tab1").fadeOut();
+            $(".header").mouseover(function () {
+                $("#tab1").fadeToggle();
+            });
+        })
+    </script>
+</body>
+
+</html>

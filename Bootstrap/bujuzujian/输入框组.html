@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Bootstrap输入框组</title>
+		<!-- 包含头部信息用于适应不同设备 -->
+		<!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width 可以确保它能正确呈现在不同设备上-->
+		<!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+		<!--在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。
+        通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。
+        这样禁用缩放功能后，用户只能滚动屏幕，就能让您的网站看上去更像原生应用的感觉。-->
+		<meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no" />
+		<!--百度的静态资源库的 CDN 服务，访问速度更快、加速效果更明显、没有速度和带宽限制、永久免费,引入代码如下-->
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+	</head>
+
+	<body>
+		<div class="content">
+			<h4>输入框组</h4> 输入框组扩展自 表单控件。使用输入框组，您可以很容易地向基于文本的输入框添加作为前缀和后缀的文本或按钮。<br /> 通过向输入域添加前缀和后缀的内容，您可以向用户输入添加公共的元素。例如，您可以添加美元符号，或者在 Twitter 用户名前添加 @，或者应用程序接口所需要的其他公共的元素。<br />
+
+			<h4>向 .form-control 添加前缀或后缀元素的步骤如下：</h4> 把前缀或后缀元素放在一个带有 class .input-group 的 div 中。<br /> 接着，在相同的 div 内，在 class 为 .input-group-addon 的 span 内放置额外的内容<br /> 把该 span放置在 input 元素的前面或者后面<br />
+		</div>
+		<div class="content">
+			<h4>基本的输入框组</h4>
+			<img src="../images/输入框组的使用.png" /><br />
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="请输入您的数据" />
+				<span class="input-group-addon">@</span>
+			</div>
+		</div>
+
+		<div class="content">
+			<h4>输入框的大小：通过添加input-group-lg、input-group-sm、input-group-xs类修改输入框组的大小</h4>
+			<div class="input-group input-group-sm">
+				<input type="text" class="form-control" placeholder="请输入您的数据" />
+				<span class="input-group-addon">@</span>
+			</div>
+		</div>
+
+		<div class="content">
+			<h4>复选框和单选框：可以把复选框和单选插件作为输入框组的前缀或者后缀元素</h4>
+			<div class="input-group">
+				<span class="input-group-addon">
+                <input type="checkbox" />
+            </span>
+				<input type="text" class="form-control" placeholder="请输入您的数据" />
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">
+                <input type="radio" />
+            </span>
+				<input type="text" class="form-control" placeholder="请输入您的数据" />
+			</div>
+
+		</div>
+
+		<div class="content">
+			<h4>按钮插件：可以把按钮作为输入框组的前缀或者后缀元素，这个时候您就不是添加 .input-group-addon class，您需要使用 class .input-group-btn 来包裹按钮。这是必需的，因为默认的浏览器样式不会被重写</h4>
+			<div class="input-group">
+				<span class="input-group-btn">
+                <button type="button" class="btn btn-default">
+                    GO !
+                </button>
+            </span>
+				<input type="text" class="form-control" placeholder="请输入您的数据" />
+			</div>
+
+		</div>
+
+		<div class="content">
+			<h4>带有下拉菜单的按钮：</h4>
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" id="drop3" data-toggle="dropdown">
+                    下拉
+                    <span class="caret"></span>
+                </button>
+					<ul class="dropdown-menu" role="menu" aria-describedby="drop3">
+						<li>测试1</li>
+						<li>测试2</li>
+					</ul>
+				</div>
+				<input type="text" class="form-control" placeholder="请输入您的数据" />
+			</div>
+		</div>
+	</body>
+
+</html>
