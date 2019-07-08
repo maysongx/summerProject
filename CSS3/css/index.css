@@ -29,7 +29,7 @@
     height: 100px;
     background-color: rgb(209, 204, 224);
     /*设置边框图片*/
-    border-image: url("/CSS3/images/border.png") 30 30 stretch;
+    border-image: url("../images/border.png") 30 30 stretch;
 }
 
 
