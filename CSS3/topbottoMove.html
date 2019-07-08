@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 animate动画</title>
+    <style>
+        img {
+            width: 142px;
+            height: 118px;
+            position: relative;
+            top: 0px;
+            animation: myMove 2s infinite;
+            -webkit-animation: myMove 2s infinite;
+            /* infinite 表示无限循环 */
+        }
+
+        @keyframes myMove {
+            0% {
+                top: 0px;
+            }
+
+            50% {
+                top: 100px;
+            }
+
+            100% {
+                top: 0px;
+            }
+        }
+
+        @-webkit-keyframes myMove {
+            0% {
+                top: 0px;
+            }
+
+            50% {
+                top: 100px;
+            }
+
+            100% {
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/kaihu.png" alt="开户">
+</body>
+
+</html>
