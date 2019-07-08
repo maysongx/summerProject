@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>JS内置对象的使用</title>
+		<script type="text/javascript">
+			//数组对象
+			function GetArrayValue() {
+				//第一种方法
+				var arr1 = new Array("姓名", "年龄");
+				alert(arr1[0] + arr1[1]);
+				//第二种方法
+				var arr2 = new Array(); //或是var arr2 = new Array(5);
+				arr2[0] = "宋";
+				arr2[1] = "23";
+				alert(arr2[0] + arr2[1]);
+				//第三种方法
+				var arr3 = ["我", "是"];
+				alert(arr3[0] + arr3[1]);
+				//输入数组数据
+				//var a = new Array(5);
+				//for(i=0;i<a.length;i++)
+				//{
+				//    a[1] = prompt("请输入第"+(i+1)+"个数据：",0);
+				//}
+				//alert(a);
+				//使用for/in遍历数组  for/in遍历会自动忽略null值和undefined值
+				var v = ["我", "是", "宋", "霞", "啦"];
+				for(var index in v) {
+					//index是数组的下标
+					alert(v[index]);
+				}
+			}
+			//冒泡排序
+			function SortData() {
+				var a = [5, 2, 3, 27, 4];
+				for(var i = 0; i < a.length; i++) {
+					for(var j = 0; j < a.length - i; j++) {
+						if(a[j] > a[j + 1]) {
+							var temp = a[j];
+							a[j] = a[j + 1];
+							a[j + 1] = temp;
+						}
+					}
+				}
+				alert(a);
+				a.push("a");
+				alert(a);
+			}
+			//数组的方法
+			function ArrayMethod() {
+				var a = [5, 2, 3, 27, 4];
+				//增加（push,unshift）和删除（pop，shift）
+				a.push("a"); //在数组的尾部添加一个值
+				alert("在数组的末尾添加数据：" + a);
+				a.unshift("b"); //在数组的头部增加一个值
+				alert("在数组的开头添加数据：" + a);
+
+				a.pop(); //删除数组的最后一个值
+				alert("删除之后的数据：" + a);
+				a.shift(); //删除数组的第一个值
+				alert("删除之后的数据：" + a);
+
+				//join方法 --通过特定的字符，把数组变成字符串，最后返回一个字符串，不会改变原数组
+				alert("join方法：" + a.join(":")); //默认是,分割的
+				//reverse方法--实现数组的颠倒，改变原数组
+				alert("reverse方法：" + a.reverse());
+				//concat方法--连接数组中的元素，并返回一个新的数组，不改变原数组
+				alert("concat方法：" + a.concat("hhh"));
+
+				//splice方法--在数组中删除或添加元素
+				//第一个参数是：起始位置
+				//第二个参数是:个数
+				alert(a.splice());
+				//slice方法--返回子数组,没有改变原数组
+				alert("slice方法" + a.slice(2));
+				//toString方法--转成字符串
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="content">
+			<div>
+				<p>数组对象</p>
+				<button onclick="GetArrayValue();">获取数组对象的值</button><br />
+				<hr />
+				<p>冒泡排序</p>
+				<button onclick="SortData();">冒泡排序</button><br />
+				<hr />
+				<p>数组的方法</p>
+				<button onclick="ArrayMethod();">数组的方法</button><br />
+				<hr />
+			</div>
+		</div>
+	</body>
+
+</html>

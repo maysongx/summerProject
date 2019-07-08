@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>JQuery CSS 类</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+    <style>
+        .tClass{
+            background-color: red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="public">
+        <div class="cont">
+            <h4>JQuery操作CSS</h4> jQuery 拥有若干进行 CSS 操作的方法：
+            <br /> addClass() - 向被选元素添加一个或多个类
+            <br /> removeClass() - 从被选元素删除一个或多个类
+            <br /> toggleClass() - 对被选元素进行添加/删除类的切换操作
+            <br />
+            <h4>添加类--addClass</h4>
+            <img src="/JQuery/images/addCalss.png" />
+            <h4>移除类--removeClass</h4>
+            <img src="/JQuery/images/removeClass.png" />
+
+            <h4>切换类--toggleClass</h4>
+            <img src="/JQuery/images/toggleClass.png" />
+
+
+            <p>测试切换类</p>
+            <button>点击测试切换类</button>
+
+        </div>
+        <div class="cont">
+            <h4>JQuery CSS()方法:css() 方法设置或返回被选元素的一个或多个样式属性</h4>
+            <h4>返回CSS属性:$("p").css("background-color");</h4>
+            <h4>设置CSS属性：$("p").css("background-color","yellow");</h4>
+            <h4>设置多个CSS属性：$("p").css({"background-color":"yellow","font-size":"200%"});</h4>
+
+        </div>
+    </div>
+
+
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <!--页面尾部加载公共js结束-->
+
+    <script type="text/javascript ">
+        $(function () {
+            $("button").click(function () {
+                $("p").toggleClass("tClass");
+            });
+
+        })
+    </script>
+</body>
+
+</html>

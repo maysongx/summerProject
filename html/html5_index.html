@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>HTML 5 基础知识</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+
+    <!--head头部公共设置结束-->
+
+    <style type="text/css">
+        table th,
+        table td {
+            border: 1px #eee solid;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="public">
+        <div class="title" style="text-align:center">
+            <a href="http://www.cnblogs.com/songxia/p/6626407.html">html5基础知识（博客园）</a>
+        </div>
+        <div class="item">
+            <h3>html5新增的主题元素</h3> article元素、section元素、aside元素、nav元素、time元素、pubdate元素
+            <br /> article元素:独立的内容区域
+            <br />
+
+        </div>
+        <div class="item">
+            <h3>article元素的使用和嵌套</h3>
+            <article>
+                <header>
+                    <h1>我是Ariticle头部标题</h1>
+                    <p>创建时间：
+                        <time pubdate="pubdate">2016-3-25</time>
+                    </p>
+                </header>
+                <p>
+                    <b>Article</b>是一块独立内容
+                </p>
+                <footer>
+                    <small>我的版权个人信息</small>
+                </footer>
+
+            </article>
+            <section>
+                <article>
+                    <header>
+                        <h1>将article元素嵌套在section元素中</h1>
+                        <p>创建时间：
+                            <time pubdate="pubdate">2016-3-25</time>
+                        </p>
+                    </header>
+                    <p>
+                        <b>Article</b>是一块独立内容
+                    </p>
+                    <footer>
+                        <small>我的版权个人信息</small>
+                    </footer>
+
+                </article>
+            </section>
+        </div>
+        <div class="item">
+            <h3>section元素的使用:由内容和标题组成，最好不要把section元素当成容器使用，可以使用div当容器使用；不要给没有标题的区块使用section元素</h3>
+            <section>
+                <h1>A标题</h1>
+                <p>A的内容</p>
+            </section>
+            <section>
+                <h1>B标题</h1>
+                <p>B的内容</p>
+            </section>
+            <article>
+                <h1>产品</h1>
+                <p>产品的详细信息列表</p>
+                <section>
+                    <h2>产品A</h2>
+                    <p>产品A的信息</p>
+                </section>
+                <section>
+                    <h2>产品B</h2>
+                    <p>产品B的信息</p>
+                </section>
+            </article>
+        </div>
+        <div class="item">
+            <h3>aside元素：侧边栏元素</h3>
+            <article>
+                <h1>article标题</h1>
+                <p>article内容</p>
+                <aside>
+                    <h2>名词解释：</h2>
+                    <p>这些是解释的内容部分</p>
+                </aside>
+            </article>
+        </div>
+        <div class="item">
+            <h3>nav:导航链接组元素</h3>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">工作台</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="item">
+            <h3>time元素:主要是是不同的时间格式</h3>
+            <time datetime="2016-03-25">今天是30</time>
+        </div>
+        <div class="item">
+            <h3>pubdate元素：与time元素共同使用</h3> 发布时间：
+            <time pubdate="pubdate" datetime="2016-03-28">今天是2016.03.28</time>
+        </div>
+
+        <h1>新的特性</h1>
+        <div class="item">
+            HTML5 中的一些有趣的新特性：
+            <br /> •用于绘画的 canvas 元素
+            <br /> •用于媒介回放的 video 和 audio 元素
+            <br /> •对本地离线存储的更好的支持
+            <br /> •新的特殊内容元素，比如 article、footer、header、nav、section
+            <br /> •新的表单控件，比如 calendar、date、time、email、url、search
+            <br />
+        </div>
+        <br />
+        <h1>浏览器支持</h1>
+        <div class="item">
+            最新版本的 Safari、Chrome、Firefox 以及 Opera 支持某些 HTML5 特性。Internet Explorer 9 将支持某些 HTML5 特性。
+        </div>
+        <br />
+        <h1>HTML5多媒体</h1>
+        <div class="item">
+            使用 HTML5 你可以简单的在网页中播放 视频(video)与音频 (audio) 。
+        </div>
+        <br />
+        <h1>HTML5应用:使用 HTML5 你可以简单地开发应用</h1>
+        <div class="item">
+            本地数据存储
+            <br /> 访问本地文件
+            <br /> 本地 SQL 数据
+            <br /> 缓存引用
+            <br /> Javascript 工作者
+            <br /> XHTMLHttpRequest 2
+        </div>
+        <br />
+        <h1>HTML5图形：使用 HTML5 可以简单的绘制图形</h1>
+        <div class="item">
+            使用"canvas"元素
+            <br /> 使用内联 SVG
+            <br /> 使用 CSS3 2D/3D
+        </div>
+        <br />
+
+        <h1>HTML5 使用 CSS3</h1>
+        <div class="item">
+            新选择器 新属性
+            <br /> 动画
+            <br /> 2D/3D 转换
+            <br /> 圆角
+            <br /> 阴影效果
+            <br /> 可下载的字体
+            <br />
+            <a href="http://www.runoob.com/css3/css3-tutorial.html">CSS3教程</a>
+        </div>
+        <br />
+
+        <h1>HTML5 语义要素</h1>
+        <div class="item">
+            HTML5 添加了很多语义元素如：headers, footers, menus, sections 和 articles
+        </div>
+        <br />
+
+        <h1>HTML5 浏览器支持</h1>
+        <div class="item">
+            HTML5 定了 8 个新的 HTML 语义（semantic） 元素。所有这些元素都是 块级 元素。
+            <br /> 为了能让旧版本的浏览器正确显示这些元素，你可以设置 CSS 的 display 属性值为 block:
+            <br /> header, section, footer, aside, nav, main, article, figure {
+            <br /> display: block;
+            <br /> }
+        </div>
+        <br />
+
+        <h1><a href="http://www.runoob.com/html/html5-new-element.html">HTML5 新元素</a>：<h5>图形的绘制，多媒体内容，更好的页面结构，更好的形式 处理，和几个api拖放元素，定位，包括网页 应用程序缓存，存储，网络工作者，等</h5>
+            </h1>
+        <div class="item">
+            <a href="http://www.runoob.com/tags/tag-canvas.html">"canvas"标签</a>：标签定义图形，比如图表和其他图像。该标签基于 JavaScript 的绘图 API
+            <br />
+            <h3>新多媒体元素</h3>
+            <a href="http://www.runoob.com/tags/tag-canvas.html">"audio"标签</a>：定义音频内容
+            <br />
+            <a href="http://www.runoob.com/tags/tag-video.html">"video"标签</a>：定义视频（video 或者 movie）
+            <br />
+            <a href="http://www.runoob.com/tags/tag-source.html">"source"标签</a>：定义多媒体资源 "video" 和 "audio"
+            <br />
+            <a href="http://www.runoob.com/tags/tag-embed.html">"embed"标签</a>：定义嵌入的内容，比如插件
+            <br />
+            <a href="http://www.runoob.com/tags/tag-track.html">"track"标签</a>：为诸如 "video"和 "audio" 元素之类的媒介规定外部文本轨道。
+            <br />
+            <h3>新表单元素</h3>
+            <a href="http://www.runoob.com/tags/tag-datalist.html">"datalist"标签</a>：定义选项列表,与 input 元素配合使用该元素，来定义 input 可能的值。
+            <br />
+            <a href="http://www.runoob.com/tags/tag-keygen.html">"keygen"标签</a>：规定用于表单的密钥对生成器字段
+            <br />
+            <a href="http://www.runoob.com/tags/tag-output.html">"output"标签</a>：定义不同类型的输出，比如脚本的输出
+            <br />
+            <br />
+            <h3>新的语义和结构元素</h3>
+            <a href="http://www.runoob.com/html/html5-new-element.html">新的语义和结构元素</a>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th>标签</th>
+                    <th>描述</th>
+                </tr>
+                <tr>
+                    <td>article</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-article.html">定义页面独立的内容区域</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>aside</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-aside.html">定义页面侧边栏内容</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>bdi</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-bdi.html">允许您设置一段文本，使其脱离其父元素的文本方向设置。</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>command</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-command.html">定义命令按钮，比如单选按钮、复选框或按钮</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>details</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-details.html">用于描述文档或文档某个部分的细节</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>dialog</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-dialog.html">定义对话框，比如提示框</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>summary</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-summary.html">标签包含 details 元素的标题</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>figure</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-figure.html">规定独立的流内容（图像、图表、照片、代码等等）</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>figcaption</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-figcaption.html">定义figure元素的标题</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>footer</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-footer.html">定义 section 或 document 的页脚</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>header</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-header.html">定义了文档的头部区域</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>mark</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-mark.html">定义带有记号的文本</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>meter</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-meter.html">定义度量衡。仅用于已知最大和最小值的度量</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>nav</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-nav.html">定义运行中的进度（进程）</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>progress</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-progress.html">定义任何类型的任务的进度</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ruby</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-ruby.html">定义 ruby 注释（中文注音或字符）</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>rt</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-rt.html">定义字符（中文注音或字符）的解释或发音</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>rp</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-rp.html">在 ruby 注释中使用，定义不支持 ruby 元素的浏览器所显示的内容</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>section</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-section.html">定义文档中的节（section、区段）</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>time</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-time.html">定义日期或时间</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>wrb</td>
+                    <td>
+                        <a href="http://www.runoob.com/tags/tag-wbr.html">规定在文本中的何处适合添加换行符规定在文本中的何处适合添加换行符</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>已经被HTML5移除测元素</td>
+                    <td>acronym、applet、basefont、big、center、dir、font、frame、frameset、noframes、strike、、tt</td>
+                </tr>
+            </table>
+
+        </div>
+        <br />
+
+    </div>
+</body>
+
+</html>

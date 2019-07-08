@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jqueryUI基础知识</title>
+    <meta name="keywords" content="关键字"/>
+    <meta name="description" content="描述"/>
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css"/>
+    <!--head头部公共设置结束-->
+
+    <script type="text/javascript" src="/skin/default/lib/jquery-ui/js/jquery.ui.min.js"></script>
+    <link href="/skin/default/lib/jquery-ui/css/jquery.ui.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="/jqueryUI/js/index.js"></script>
+    <link rel="stylesheet" href="/jqueryUI/css/index.css" />
+    <script type="text/javascript ">
+        $(function () {
+            $.index.init();
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title">
+            <a href="http://www.cnblogs.com/songxia/p/6611957.html">JQuery UI基础知识（博客园）</a>
+        </div>
+
+
+
+
+        <div>
+            <p>日期</p>
+            <input type="text" name="date" id="date" />
+            <hr />
+            <p>Slider</p>
+            <div class="SliderClass">滚动条</div>
+            <hr />
+            <p>Accordion--折叠面板</p>
+            <div id="accordion">
+                <h3><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>Section 1</h3>
+                <div>
+                    <p>
+                        Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                    </p>
+                </div>
+                <h3>Section 2</h3>
+                <div>
+                    <p>
+                        Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.
+                    </p>
+                </div>
+                <h3>Section 3</h3>
+                <div>
+                    <p>
+                        Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                    </p>
+                    <ul>
+                        <li>List item one</li>
+                        <li>List item two</li>
+                        <li>List item three</li>
+                    </ul>
+                </div>
+                <h3>Section 4</h3>
+                <div>
+                    <p>
+                        Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est.
+                    </p>
+                    <p>
+                        Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>拖动（Draggable）--当 draggable 移动到视区外时自动滚动文档。设置 scroll 选项为 true 来启用自动滚动，当滚动触发时进行微调，滚动速度是通过 scrollSensitivity 和 scrollSpeed 选项设置的</p>
+            <div id="draggable" class="ui-widget-content">
+                <p>请拖动我！</p>
+            </div>
+            <hr />
+            <p>tabs(标签页)</p>
+            <div id="tabs">
+                <ul>
+                    <li>
+                        <a href="#tabs-1">Nunc tincidunt</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-2">Proin dolor</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-3">Aenean lacinia</a>
+                    </li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="Content">
+                        <div class="ContentHeader">2015-5-4</div>
+                        <div class="ContentContent">
+
+                            <a href="https://www.baidu.com/?tn=99867155_hao_pg">百度一下</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-2">
+                    <div class="Content">
+                        <div class="ContentHeader">2015-5-5</div>
+                        <div class="ContentContent">
+
+                            <a href="https://www.baidu.com/?tn=99867155_hao_pg">百度一下</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-3">
+                    <div class="Content">
+                        <div class="ContentHeader">2015-5-6</div>
+                        <div class="ContentContent">
+
+                            <a href="https://www.baidu.com/?tn=99867155_hao_pg">百度一下</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1>使用拖放实现购物车的功能</h1>
+            <div id="products">
+                <h1 class="ui-widget-header">产品</h1>
+                <div id="catalog">
+                    <h2><a href="#">T-Shirts</a></h2>
+                    <div>
+                        <ul>
+                            <li>Lolcat Shirt</li>
+                            <li>Cheezeburger Shirt</li>
+                            <li>Buckit Shirt</li>
+                        </ul>
+                    </div>
+                    <h2><a href="#">Bags</a></h2>
+                    <div>
+                        <ul>
+                            <li>Zebra Striped</li>
+                            <li>Black Leather</li>
+                            <li>Alligator Leather</li>
+                        </ul>
+                    </div>
+                    <h2><a href="#">Gadgets</a></h2>
+                    <div>
+                        <ul>
+                            <li>iPhone</li>
+                            <li>iPod</li>
+                            <li>iPad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="cart">
+                <h1 class="ui-widget-header">购物车</h1>
+                <div class="ui-widget-content">
+                    <ol>
+                        <li class="placeholder">添加产品到这里</li>
+                    </ol>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <h1>缩放功能</h1>
+            <div id="resizable" class="ui-widget-content">
+                <h3 class="ui-widget-header">缩放（Resizable）</h3>
+            </div>
+
+            <br />
+            <hr />
+            <h1>限制缩放的区域</h1>
+            <div id="FatherID">
+                <h3 id="Father">父容器</h3>
+                <div id="resizaeID">
+                    <h3 id="suofang">缩放（Resizable）</h3>
+                </div>
+            </div>
+
+            <br />
+            <hr />
+            <h1>选择多个项目</h1>
+            <ol id="selectable">
+                <li class="ui-widget-content">Item 1</li>
+                <li class="ui-widget-content">Item 2</li>
+                <li class="ui-widget-content">Item 3</li>
+                <li class="ui-widget-content">Item 4</li>
+                <li class="ui-widget-content">Item 5</li>
+                <li class="ui-widget-content">Item 6</li>
+                <li class="ui-widget-content">Item 7</li>
+            </ol>
+            <br />
+            <hr />
+            <h1>排序（sortable）</h1>
+            <ul id="sortable">
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+            </ul>
+            <br />
+            <hr />
+            <h1>自动填充（AutoComplete）</h1>
+            <textarea id="AutoComplete"></textarea>
+            <br />
+            <hr />
+            <h1>菜单（Menu）</h1>
+            <div class="CustomMenu">
+                <ul id="menu">
+                    <li>
+                        <a href="#">Item 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 2</a>
+                        <ul>
+                            <li>
+                                <a href="#">Item 2-1</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Item 3</a>
+                        <ul>
+                            <li>
+                                <a href="#">Item 3-1</a>
+                            </li>
+                            <li>
+                                <a href="#">Item 3-2</a>
+                            </li>
+                            <li>
+                                <a href="#">Item 3-3</a>
+                            </li>
+                            <li>
+                                <a href="#">Item 3-4</a>
+                            </li>
+                            <li>
+                                <a href="#">Item 3-5</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Item 4</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 5</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br />
+            <hr />
+            <h1>工具提示</h1>
+            <div class="cont1">
+                <p>
+                    <label for="age">您的年龄：</label>
+                    <input id="age" title="年龄仅用于统计。">
+                </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

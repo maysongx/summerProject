@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/*分页样式设置*/
+
+.paging {
+    margin: 0px auto;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    box-sizing: border-box;
+    padding-top: 6px;
+    display: table;
+}
+
+.paging a {
+    margin: 0px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.paging .font_icon {
+    color: #2B333B;
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.paging .pagenum {
+    float: left;
+}
+
+.paging .p_icon {
+    color: #889098;
+    border-radius: 50%;
+}
+
+.paging .p_icon:hover {
+    background-color: #E4E8EB;
+}
+
+.paging .p_icon.selected {
+    background-color: #2B333B;
+    color: white;
+}

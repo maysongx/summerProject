@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>移除添加类</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+    <style type="text/css">
+        th {
+            background: #0066FF;
+            color: #FFFFFF;
+            line-height: 20px;
+            height: 30px;
+        }
+        
+        td {
+            padding: 6px 11px;
+            border-bottom: 1px solid #95bce2;
+            vertical-align: top;
+            text-align: center;
+        }
+        
+        td * {
+            padding: 6px 11px;
+        }
+        
+        tr.over td {
+            background: #bcd4ec;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="public">
+        <table class="stripe">
+            <!--用class="stripe"来标识需要使用该效果的表格-->
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>QQ</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>邓国梁</td>
+                    <td>23</td>
+                    <td>31540205</td>
+                    <td>gl.deng@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>邓国梁</td>
+                    <td>23</td>
+                    <td>31540205</td>
+                    <td>gl.deng@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>邓国梁</td>
+                    <td>23</td>
+                    <td>31540205</td>
+                    <td>gl.deng@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>邓国梁</td>
+                    <td>23</td>
+                    <td>31540205</td>
+                    <td>gl.deng@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>邓国梁</td>
+                    <td>23</td>
+                    <td>31540205</td>
+                    <td>gl.deng@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <!--页面尾部加载公共js结束-->
+
+    <script type="text/javascript ">
+        $(function () {
+            //当鼠标移动到行的时候，添加一个类
+            $(".stripe tr").mouseover(function () {
+                $(this).addClass("over");
+            });
+            //当鼠标离开某一行的时候，移除一个类
+            $(".stripe tr").mouseout(function () {
+                $(this).removeClass("over");
+            });
+            ////JQuery的链式操作
+            //$(".stripe tr").mouseover(function () {
+            //    $(this).addClass("over");
+            //}).mouseout(function () {
+            //    $(this).removeClass("over");
+        })
+    </script>
+
+</body>
+
+</html>

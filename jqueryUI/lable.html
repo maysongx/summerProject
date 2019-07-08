@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jqueryUI基础知识</title>
+    <meta name="keywords" content="关键字"/>
+    <meta name="description" content="描述"/>
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css"/>
+    <!--head头部公共设置结束-->
+
+    <script type="text/javascript" src="/skin/default/lib/jquery-ui/js/jquery.ui.min.js"></script>
+    <script type="text/javascript ">
+        $(function () {
+            $("#tabs").tabs();
+        })
+    </script>
+    <style>
+        #tabs ul {
+            width: 485px;
+            height: 40px;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #tabs ul li {
+            float: left;
+            width: 158px;
+            height: 30px;
+            border: 1px white solid;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="wrap">
+    <div id="tabs">
+        <ul>
+            <li>
+                <a href="#tabs-1">tab1</a>
+            </li>
+            <li>
+                <a href="#tabs-2">tab2</a>
+            </li>
+            <li>
+                <a href="#tabs-3">tab3</a>
+            </li>
+        </ul>
+        <div id="tabs-1">
+            <p>tab1内容</p>
+        </div>
+        <div id="tabs-2">
+            <p>tab2内容</p>
+        </div>
+        <div id="tabs-3">
+            <p>tab3内容</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

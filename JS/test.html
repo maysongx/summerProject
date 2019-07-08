@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <title>文字无缝滚动的效果</title>
+    <style>
+        .info {
+            width: 900px;
+            margin: 0 auto;
+            border: 1px red solid;
+            overflow: hidden;
+        }
+
+        ul {
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        li {
+            /*float: left;*/
+            height: 30px;
+            line-height: 30px;
+            background-color: #ccccb4;
+            margin-right: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+
+
+        $(function () {
+            var $dom = $('.info li');
+            $('.list2').html($('.list1 ul').clone());
+            $dom.each(function (index, perLi) {
+                var perWidth = $(perLi).width();
+                // $(perLi).css({
+                //     "transform": "translateX(-100px)"
+                // });
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="info">
+    <div class="list1">
+        <ul>
+            <li>好看电视剧刚好看到</li>
+            <li>和国际法和国际法话估计是看脚后跟</li>
+            <li>都会更健康</li>
+            <li>动画过渡很忌惮刚</li>
+            <li>看电视剧高科技快捷更多个手机端</li>
+            <li>见到过后对话框好得快积分的</li>
+        </ul>
+    </div>
+    <div class="list2"></div>
+
+</div>
+</body>
+</html>

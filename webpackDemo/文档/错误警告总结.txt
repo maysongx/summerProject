@@ -1,0 +1,39 @@
+错误警告：The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+表明没有设定是开发模式还是生产模式,要求指定，即没有配置webpack的mode选项，
+默认有production和development两种模式可以设置，因此我们尝试设为development模式，在命令行输入：
+webpack --mode development
+
+错误警告：The CLI moved into a separate package:webpack-cli.
+Please install 'webpack-cli' in addition to webpack itself to use the CLI.
+->when using npm: npm install webpack-cli -D
+->when using yarn: yarn add webpack-cli -D
+表明需要局部安装webpack-cli
+CLI（命令行工具）已经转移到了一个单独的包webpack-cli中。
+除了webpack自身外，请额外安装webpack-cli来使用CLI。
+npm install webpack-cli -D  这里-D参数和–save-dev的作用相同，只是一种简写而已。
+npm install webpack-cli --save-dev
+
+错误警告：ERROR in Entry module not found: Error: Can't resolve './src' in 'D:\summerSongXia.github.io\webPack\demo2'
+表明webpack4.x是以项目根目录下的'./src'作为默认入口，需要在根目录下创建src文件夹，
+事实上webpack4.x以'./src/index.js'作为入口，单单创建src文件而没有index.js文件仍然会报错，
+因此我们在根目录下面创建src文件夹，并将index.js入口文件放在里面
+src文件夹默认是入口
+dist文件夹默认是出口文件夹 main.js 默认是出口js文件（dist文件夹会自动生成）
+
+
+错误警告：You may need an appropriate loader to handle this file type.
+表明需要安装：css的loader转换器和style的loader转换器
+cnpm install --save-dev css-loader style-loader
+cnpm uninstall --save-dev css-loader style-loader
+
+错误警告：You may need an appropriate loader to handle this file type.
+表明需要声明loader
+// 内联使用方法 不需要配置webpack.config.js文件中的loader
+require('style-loader!css-loader!./index.css');
+
+
+错误警告： Cannot find module 'babel-code-frame'
+cnpm install --save-dev babel-code-frame
+一般遇到这个问题
+cnpm install --save-dev XXX

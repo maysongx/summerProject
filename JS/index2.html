@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>JS基础2</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+
+    <!--head头部公共设置结束-->
+
+</head>
+
+
+<body>
+    <div class="public">
+        <div style="width: 1100px; margin: 20px auto 0px;">
+            <div style="border-bottom: 1px red solid;">
+                <p>
+                    JS调试方法：
+                    <br /> (1)使用alert逐步输出，查看结果
+                    <br /> (2)使用debugger;当程序执行到debugger的时候，会自动暂停，等待人为指令进行下去
+                    <br /> (3)重写window.onerror方法
+                </p>
+            </div>
+
+            <div style="border-bottom: 1px red solid;">
+                <p>
+                    JS关键字：
+                    <br /> break delete function return typeof case do if switch var catch else in this void
+                    <br /> continue false instanceof throw while debugger finally new true with default for null try
+                </p>
+                <p>
+                    JS保留字：
+                    <br /> abstract double goto native static boolean enum implements package super byte export import private synchorized
+                    <br /> char extends int protected throws class final interface public transient const float long short volatile
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+
+    <!--页面尾部加载公共js结束-->
+    <script type="text/javascript">
+        //在浏览器输出字符a
+        document.write("a");
+        //使用debugger处理错误
+        debugger;
+        document.write("b");
+
+        //使用window.onerror处理错误：主要是针对IE错误不明显的时候
+        window.onerror = function (sMsg, sUrl, sLine) {
+            //错误处理
+            str = "";
+            str += sMsg;
+            str += sUrl;
+            str += sLine;
+            alert(str);
+            return true;
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+/*创建动画规则--使用from  to  方式*/
+
+
+/*@keyframes firstAnimation {
+            from {
+                background-color: yellow;
+            }
+
+            to {
+                background-color: blue;
+            }
+        }
+
+        @-webkit-keyframes firstAnimation {
+            from {
+                background-color: yellow;
+            }
+
+            to {
+                background-color: blue;
+            }
+        }*/
+
+
+/*创建动画规则--使用%  方式*/
+
+@keyframes firstAnimation {
+    0% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: blue;
+    }
+}
+
+@-webkit-keyframes firstAnimation {
+    0% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: blue;
+    }
+}
+
+.cont1,
+.cont2 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+.cont1:hover {
+    /*选择器绑定到动画规则*/
+    animation: firstAnimation 5s;
+    -webkit-animation: firstAnimation 5s;
+}
+
+
+/*创建动画规则--使用%  方式*/
+
+@keyframes firstAnimation2 {
+    0% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: blue;
+        position: relative;
+        left: 40%;
+        top: 40px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@-webkit-keyframes firstAnimation2 {
+    0% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: blue;
+        position: relative;
+        left: 40%;
+        top: 40px;
+        width: 250px;
+        height: 250px;
+    }
+    0% {
+        background-color: yellow;
+        position: relative;
+        left: 40%;
+        top: 40px;
+    }
+}
+
+.cont2:hover {
+    /*选择器绑定到动画规则*/
+    /*animation:firstAnimation2 5s;*/
+    /* Safari and Chrome: */
+    /*-webkit-animation: firstAnimation2 5s ;*/
+}
+
+@keyframes firstAnimation2 {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@-webkit-keyframes firstAnimation3 {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+    }
+}

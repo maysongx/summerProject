@@ -1,0 +1,135 @@
+.cont1 {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    box-shadow: 2px 2px 3px #aaaaaa;
+    background-color: yellow;
+    transform: rotate(9deg) translateY(18px);
+    -ms-transform: rotate(9deg) translateY(18px);
+    /*IE9*/
+    -webkit-transform: rotate(9deg) translateY(18px);
+    /*Safari Chrome*/
+    -moz-transform: rotate(9deg) translateY(18px);
+    /*Firefox*/
+    -o-transform: rotate(9deg) translateY(18px);
+    /*Opera*/
+    /*设置旋转元素的基点位置*/
+    transform-origin: 20% 20%;
+    /*设置透明视图*/
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 50% 50%;
+}
+
+#perspective {
+    -webkit-perspective: 800;
+    -webkit-perspective-origin: 50% 50%;
+    -webkit-transform-style: -webkit-preserve-3d;
+    margin: 100px auto;
+}
+
+#block {
+    width: 200px;
+    height: 200px;
+    border: 1px red solid;
+    background-color: blue;
+    /*沿着Y轴旋转45度*/
+    transform: rotateY(45deg);
+    -webkit-transform: rotateY(45deg);
+}
+
+#block:hover {
+    /*图片变大的效果*/
+    -webkit-transform: translateZ(90px) translateX(45px);
+}
+
+
+/*/////////////*/
+
+
+/*过渡效果*/
+
+.trans1 {
+    width: 200px;
+    height: 200px;
+    background: #FD18AD;
+    -webkit-transition-property: background-color;
+    /*变换属性*/
+    transition-delay: 0.2s;
+    /*延迟*/
+    -webkit-transition-duration: 0.9s;
+    /*持续时间*/
+    -webkit-transition-time-function: ease;
+    /*动画速率 具有（linear | ease-in | ease-out | ease-in-out | cubic-bezier）五种选择*/
+}
+
+.trans1:hover {
+    background: #778AE7;
+    color: #FFFFFF;
+}
+
+
+/*过渡属性*/
+
+.trans2,
+.trans3,
+.trans4,
+.trans5 {
+    width: 200px;
+    height: 200px;
+    background: #FD18AD;
+    float: left;
+    margin-left: 30px;
+    -webkit-transition-property: background-color;
+    /*变换属性*/
+    transition-delay: 0.2s;
+    /*延迟*/
+    -webkit-transition-duration: 0.9s;
+    /*持续时间*/
+    -webkit-transition-time-function: ease;
+    /*动画速率 具有（linear | ease-in | ease-out | ease-in-out | cubic-bezier）五种选择*/
+}
+
+.trans2:hover {
+    /*transform:skew(35deg);*/
+    /*拉伸*/
+    /*transform:scale(1, 0.5);*/
+    /*缩放*/
+    /*transform:rotate(45deg); */
+    /*旋转*/
+    transform: translate(10px, 20px);
+    /*位移*/
+}
+
+.trans3:hover {
+    /*transform:skew(35deg);*/
+    /*拉伸*/
+    /*transform:scale(1, 0.5);*/
+    /*缩放*/
+    transform: rotate(45deg);
+    /*旋转*/
+    /*transform: translate(10px, 20px); /*位移*/
+    */
+}
+
+.trans4:hover {
+    /*transform:skew(35deg);*/
+    /*拉伸*/
+    transform: scale(1, 0.5);
+    /*缩放*/
+    /*transform:rotate(45deg); */
+    /*旋转*/
+    /*transform: translate(10px, 20px);*/
+    /*位移*/
+}
+
+.trans5:hover {
+    transform: skew(35deg);
+    /*拉伸*/
+    /*transform:scale(1, 0.5);*/
+    /*缩放*/
+    /*transform:rotate(45deg); */
+    /*旋转*/
+    /*transform: translate(10px, 20px);*/
+    /*位移*/
+}

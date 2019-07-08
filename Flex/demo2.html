@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>FlexBox布局——色子案例</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css"/>
+    <!--head头部公共设置结束-->
+    <style>
+        .container {
+            display: flex;
+            padding: 10px;
+            width: 120px;
+            height: 120px;
+            border: 3px #ddd solid;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 0px #999;
+            margin: 10px;
+        }
+        
+        .items {
+            width: 30px;
+            height: 30px;
+            background-color: #5f5f5f;
+            box-shadow: 3px 3px 3px 0px #999;
+            border-radius: 50%;
+            line-height: 30px;
+            color: white;
+        }
+        
+        .one {
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .two {
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .two1 {
+            flex-flow: column wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .three {
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .three .items:first-child {
+            align-self: flex-start;
+        }
+        
+        .three .items:last-child {
+            align-self: flex-end;
+        }
+        
+        .four {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .four .items {
+            margin: 15px;
+        }
+        
+        .four1 {
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .four1>div {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .five {
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        
+        .five>div {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .six {
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        
+        .six>div {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+
+</head>
+
+<body style="margin-bottom:30px;">
+    <div class="container six">
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+    </div>
+    <div class="container six">
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+    </div>
+    <div class="container five">
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+        <div>
+            <div class="items"></div>
+        </div>
+
+        <div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+
+    </div>
+    <div class="container four1">
+        <div>
+            <div class="items">1-1</div>
+            <div class="items">1-2</div>
+        </div>
+        <div>
+            <div class="items">2-1</div>
+            <div class="items">2-2</div>
+        </div>
+
+
+    </div>
+    <div class="container four">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+    <div class="container three">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+    <div class="container two">
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+    <div class="container two1">
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+    <div class="container one">
+        <div class="items"></div>
+    </div>
+
+
+</body>
+
+</html>

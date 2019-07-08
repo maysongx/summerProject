@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>photoClip裁剪图片插件</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+
+    <link href="/imgCut/css/photoClip_PIC.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body ontouchstart="">
+    <div class="upload_avator public">
+        <!--原图展示区域-->
+        <div id="clipArea" class="clipArea"></div>
+        <div class="btnUpload">
+            <input type="file" id="file" value="http://localhost/52crm/avator/default.jpg" class="file">
+            <button id="selectImg" class="btnImg">选择图片</button>
+            <button id="reviewImg" class="btnImg">裁剪</button>
+            <button id="uploadSelectedImg" class="btnImg">上传</button>
+        </div>
+        <!--裁剪预览区域-->
+        <div id="reviewImgArea"></div>
+
+    </div>
+
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+
+    <!--页面尾部加载公共js结束-->
+
+    <!--photoClip插件相关-->
+    <script type="text/javascript" src="/skin/default/lib/photoClip/js/hammer.js"></script>
+    <script type="text/javascript" src="/skin/default/lib/photoClip/js/iscroll-zoom.js"></script>
+    <script type="text/javascript" src="/skin/default/lib/photoClip/js/jquery.photoClip.js"></script>
+
+
+
+    <script type="text/javascript" src="/imgCut/js/photoClip_PIC.js"></script>
+
+    <script type="text/javascript ">
+        $(function () {
+
+            $.photoClip_PIC.init();
+        })
+    </script>
+</body>
+
+</html>
