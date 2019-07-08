@@ -10,9 +10,9 @@
     <meta name="description" content="描述" />
     <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
     <script type="text/javascript" src="/skin/default/js/public.js?ver=1.0"></script>
-    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css"/>
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css" />
     <!--head头部公共设置结束-->
-    <link rel="stylesheet" href="css/index2.css" />
+    <link rel="stylesheet" href="css/demo.css" />
 
 </head>
 
@@ -22,72 +22,22 @@
             <h1>html5新增标签</h1> header,article,aside,audio,blackquote,canvas,figure,figcaption,footer,hgroup, menu,meter,nav,progress,section,video,address
         </div>
         <div class="item">
-            <h1>box-shadow：设置阴影</h1>
-            <h3>
-                参数：box-shadow:5px 5px 5px rgba(0,0,0,.6);<br />
-                none：无阴影<br />
-                参数一：第1个长度值用来设置对象的阴影水平偏移值。可以为负值<br />
-                参数二：第2个长度值用来设置对象的阴影垂直偏移值。可以为负值<br />
-                参数三：如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值<br />
-                参数四：如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值<br />
-                参数五：（color）：设置对象的阴影的颜色。
-            </h3>
-            <ul>
-                <li class="outset">外阴影常规效果
-                    <br />box-shadow:5px 5px rgba(0,0,0,.6);</li>
-                <li class="outset-blur">外阴影模糊效果
-                    <br />box-shadow:5px 5px 5px rgba(0,0,0,.6);</li>
-                <li class="outset-extension">外阴影模糊外延效果
-                    <br />box-shadow:5px 5px 5px 10px rgba(0,0,0,.6);</li>
-                <li class="inset">内阴影效果
-                    <br />box-shadow:2px 2px 5px 1px rgba(0,0,0,.6) inset;</li>
-                <li class="multiple-shadow">外阴影模糊效果
-                    <br />box-shadow:5px 5px 5px rgba(0,0,0,.6);</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <h1>text-shadow：文本阴影</h1>
-            <h3>
-                参数：text-shadow:1px 1px 0px rgba(255,255,255,1)<br />
-                none：无阴影<br />
-                参数一：第1个长度值用来设置对象的阴影水平偏移值。可以为负值<br />
-                参数二：第2个长度值用来设置对象的阴影垂直偏移值。可以为负值<br />
-                参数三：如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值<br />
-                参数四：（color）：设置对象的阴影的颜色。
-            </h3>
-            <ul>
-                <li class="mormal">
-                    <strong>普通文字阴影</strong>
-                    <p>测试普通文字阴影效果</p>
-                </li>
-                <li class="blur">
-                    <strong>模糊文字阴影效果</strong>
-                    <p>测试模糊文字阴影效果</p>
-                </li>
-                <li class="group">
-                    <strong>多重模糊文字阴影效果</strong>
-                    <p>测试多重模糊文字阴影效果</p>
-                </li>
-            </ul>
-        </div>
-        <div class="item">
             <h1>animation动画</h1>
             <a href="http://www.runoob.com/css3/css3-animations.html">animation动画参考</a>
             <p>animation:myFirstAnimation 3s ease 5s infinite </p>
             <h3>参数myFirstAnimation动画的名称</h3>
             <h3>参数3s：规定动画完成一个周期所花费的秒或毫秒</h3>
             <h3>参数ease：规定动画的速度曲线，默认是ease</h3> linear:匀速
-            <br/> ease:动画以低速开始，然后加快，在结束前变慢。
-            <br/> ease-in：动画以低速开始
-            <br/> ease-out:动画以低速结束
-            <br/> ease-in-out:动画以低速开始和结束
+            <br /> ease:动画以低速开始，然后加快，在结束前变慢。
+            <br /> ease-in：动画以低速开始
+            <br /> ease-out:动画以低速结束
+            <br /> ease-in-out:动画以低速开始和结束
             <br />
             <h3>参数5s：规定动画何时开始，默认是0，单位秒或是毫秒</h3>
             <h3>参数infinite：规定动画播放的次数，默认是1次，参数infinite表示无限循环播放</h3>
             <img src="images/定义动画.png" />
             <img src="images/引用动画.png" />
-            <br/>
+            <br />
 
             <div class="demo1">鼠标放上去显示颜色变化</div>
             <div class="demo2"></div>
@@ -120,9 +70,9 @@
             <br />
 
             <p>delay：定义过渡效果何时开始。</p>
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
             <div class="demo12">鼠标放上去显示效果</div>
         </div>
         <div class="item">
@@ -195,11 +145,16 @@
     </div>
 
     <script type="text/javascript" src="js/prefixfree.min.js"></script>
-    <script type="text/javascript" src="js/index2.js"></script>
     <script type="text/javascript ">
-        $(function () {
+        $(function() {
             $.public.init();
-            $.index2.init();
+            //demo6动画 jquery动画
+            $('.demo6').click(function() {
+                $(this).css({
+                    "animation": "demo6 3s linear infinite",
+                    "-webkit-animation": "demo6 3s linear infinite"
+                });
+            });
         })
     </script>
 </body>
