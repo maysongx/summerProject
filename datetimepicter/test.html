@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./js//bootstrap.datetimepicker/bootstrap.min.css" />
+    <link rel="stylesheet" href="./js//bootstrap.datetimepicker/bootstrap-datetimepicker.min.css" />
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js//bootstrap.datetimepicker/bootstrap.min.js"></script>
+    <script src="./js//bootstrap.datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        $(function () {
+            $('.startDate').datetimepicker({
+                autoclose: true,
+                todayBtn: true,
+                todayHighlight: true,
+                language: 'zh-CN',
+                startView: 2,// 默认是2（month视图）
+
+                startDate: new Date(),//开始时间设置为当前时间，表示当前时间之前的都是不可用
+                format: 'yyyy-mm-dd hh:ii',
+                minView: 0, //默认值：0, 'hour'  日期时间选择器所能够提供的最精确的时间选择视图
+            });
+            $('.endDate').datetimepicker({
+                autoclose: true,
+                todayBtn: true,
+                todayHighlight: true,
+                language: 'zh-CN',
+                startView: 2,// 默认是2（month视图）
+
+
+                format: 'yyyy-mm-dd hh:ii',
+                minView: 0, //默认值：0, 'hour'  日期时间选择器所能够提供的最精确的时间选择视图
+            }).on('show', function (ev) {
+                var starttime = $('.startDate').val();
+                $('.endDate').datetimepicker('setStartDate', starttime);
+            });
+            $('.startDate,.endDate').datetimepicker('hide');
+        })
+        //只需向 $.fn.datetimepicker.dates中增加一个key即可，一定要放在调用 .datetimepicker()之前。如下案例
+        $.fn.datetimepicker.dates['zh'] = {
+            days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],
+            daysShort: ["日", "一", "二", "三", "四", "五", "六", "日"],
+            daysMin: ["日", "一", "二", "三", "四", "五", "六", "日"],
+            months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            monthsShort: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"],
+            meridiem: ["上午", "下午"],
+            today: "今天"
+        };
+    </script>
+
+
+
+</head>
+
+<body>
+    <input type="text" class="startDate">
+    <em>-</em>
+    <input type="text" class="endDate">
+</body>
+
+</html>

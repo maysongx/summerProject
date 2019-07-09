@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>Bootstrap表单</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css" />
+    <!--head头部公共设置结束-->
+
+    <link rel="stylesheet" href="/skin/default/lib/bootstrap-v3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="public">
+        <h4>基础 或垂直 表单：创建表单的步骤</h4> 向父 form>元素添加 role="form"
+        <br /> 把标签和控件放在一个带有 class .form-group 的 div 中。这是获取最佳间距所必需的。
+        <br /> 向所有的文本元素 input、textarea 和 select 添加类 .form-control。
+        <br />
+        <form role="form" />
+        <h4 />
+        <h4>水平表单：水平表单与其他表单不仅标记的数量上不同，而且表单的呈现形式也不同。如需创建一个水平布局的表单，请按下面的几个步骤进行</h4> 向父form元素添加 class .form-horizontal。
+        <br /> 把标签和控件放在一个带有 class .form-group 的div中。
+        <br /> 向标签添加 class .control-label。
+        <br />
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">名字</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">姓</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="lastname" placeholder="请输入姓">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> 请记住我
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">登录</button>
+                </div>
+            </div>
+        </form>
+        <h4>Bootstrap支持的表单控件：主要是 input、textarea、checkbox、radio 和 select,需要添加form-control类</h4>
+
+        <div class="form-group">
+            复选框（（Checkbox）和单选框（Radio）：复选框和单选按钮用于让用户从一系列预设置的选项中进行选择。
+            <br /> 当创建表单时，如果您想让用户从列表中选择若干个选项时，请使用 checkbox。如果您限制用户只能选择一个选项，请使用 radio。
+            <br /> 对一系列复选框和单选框使用 .checkbox-inline 或 .radio-inline类，控制它们显示在同一行上。
+            <br />
+            <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 选项 1
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="option2"> 选项 2
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3"> 选项 3
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 选项 1
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="option2"> 选项 2
+            </label>
+            <br /> 选择框（Select）:当您想让用户从多个选项中进行选择，但是默认情况下只能选择一个选项时，则使用选择框
+            <br /> 使用 select展示列表选项，通常是那些用户很熟悉的选择列表，比如州或者数字。
+            <br /> 使用 multiple="multiple" 允许用户选择多个选项。
+            <br />
+            <label for="name">选择列表</label>
+            <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <label for="name">可多选的选择列表</label>
+            <select multiple="multiple" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <br /> 静态控件：当您需要在一个水平表单内的表单标签后放置纯文本时，请在 p上使用 class .form-control-static。
+            <br />
+            <p class="form-control-static">Email:email@example.com</p>
+            <h4>表单控件的状态</h4>
+
+            <br />
+            <br />
+            <a href="http://www.runoob.com/bootstrap/bootstrap-forms.html">详细表单内容</a>
+            <br />
+            <br /> 输入框（Input）:支持的类型：text、password、datetime、datetime-local、date、month、time、week、number、email、url、search、tel 和 color。适当的 type 声明是必需的，这样才能让 input 获得完整的样式
+            <br />
+            <input type="text" class="form-control" placeholder="请输入姓名" />
+            <input type="password" class="form-control" placeholder="请输入您的密码" />
+            <br />
+            <br /> 文本框（Textarea）:当您需要进行多行输入的时，则可以使用文本框 textarea。必要时可以改变 rows 属性（较少的行 = 较小的盒子，较多的行 = 较大的盒子）。
+            <br />
+            <textarea class="form-control" rows="4" />
+            <br />
+            <br />
+
+        </div>
+    </div>
+
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/js/public.js"></script>
+    <!--页面尾部加载公共js结束-->
+
+    <script type="text/javascript" src="/lib/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript ">
+        $(function () {
+            $.public.init();
+        })
+    </script>
+</body>
+
+</html>

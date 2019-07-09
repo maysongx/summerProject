@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>animate动画基础知识</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/js/public.js?ver=1.0"></script>
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css"/>
+    <!--head头部公共设置结束-->
+</head>
+
+<body>
+    <div class="public">
+        <div class="t">
+            <div class="t1">
+                <a href="http://www.w3school.com.cn/jquery/effect_animate.asp"><h1>anitmate动画</h1></a> 1. animate() 方法执行 CSS 属性集的自定义动画,该方法通过CSS样式将元素从一个状态改变为另一个状态。
+                <br /> 2.只有数字值可创建动画（比如 "margin:30px"）。字符串值无法创建动画（比如 "background-color:red"）
+                <br /> 3.使用 "+=" 或 "-=" 来创建相对动画
+                <br /> 4.$('.t1').animate({ height: 'toggle' }, 'slow');
+                <br /> 5.
+                <a href="http://www.cnblogs.com/sntetwt/archive/2014/07/10/3835242.html">参考1</a>
+                <br /> 6.
+                <a href="http://www.css88.com/jqapi-1.9/animate/">参考2</a>
+                <br /> 7.
+                <a href="http://www.cnblogs.com/kissdodog/p/5429970.html">参考3</a>
+                <br /> 注意：如果尺寸没有单位，那么默认单位是px。
+                <br /> 属性值需要用双引号包裹，如果属性值是数字的话可以省略。
+                <br /> 类似font-szie或者background-color这样的属性需要去掉中间的中横线，并且第二个单词首字母要大写(例如fontSize)
+                <br />
+            </div>
+            <button id="btn1">开始动画</button>
+            <button id="btn3">队列动画</button>
+            <button id="btn2">停止动画</button>
+            <button id="btn4">关闭div</button>
+            <div class="t2" style="width:200px;height:200px;font-size:18px;background-color:red;">队列动画</div>
+            <br />
+            <div class="t3" style="width:100px;height:100px;border:1px red solid;">队列动画</div>
+            <br />
+            <div class="t4" style="width:800px;height:400px;border:1px red solid;">关闭div</div>
+            <div class="tt3" style="width:400px;height:200px;border:1px red solid;position:relative;overflow:hidden;margin:30px;">
+                <div class="tt1" style="position:absolute;top:0px;width:400px;height:200px;background-color:antiquewhite">文字表达部分</div>
+                <div class="tt2" style="position:absolute;top:200px;width:400px;height:200px;background-color:aquamarine">底部图片</div>
+            </div>
+
+            <div class="tt33" style="width:400px;height:200px;border:1px red solid;position:relative;overflow:hidden;margin:30px;">
+                <div class="tt11" style="position:absolute;top:0px;width:400px;height:200px;background-color:antiquewhite">文字表达部分</div>
+                <div class="tt22" style="position:absolute;top:200px;width:400px;height:50px;background-color:aquamarine">底部图片</div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            //开始动画
+            $('#btn1').click(function () {
+                //单个动画设置
+                //linear 动画缓动 默认是匀速swing
+                $('.t').find('.t1').animate({
+                    height: 'toggle'
+                }, 'slow', 'linear', function () { /*动画完成执行的函数*/ });
+                //队列动画
+                $('.t').find('.t2').animate({
+                    width: '100px',
+                    height: '100px'
+                }, '30000');
+                $('.t').find('.t2').animate({
+                    fontSize: '25px'
+                }, 'slow');
+            });
+            //队列动画
+            //queue参数可以规定动画是否加入动画队列执行，如果进入动画队列，将按照顺序执行，也就是第一个动画执行完成之后，队列中的第二个动画再执行，以此类推
+            $("#btn3").click(function () {
+                $(".t3").animate({
+                        width: "1000px"
+                    }, {
+                        queue: true,
+                        duration: 5000,
+                        complete: function a() {
+                            alert("宽度设置完成")
+                        }
+                    })
+                    .animate({
+                        fontSize: '50px'
+                    }, {
+                        queue: true,
+                        duration: 5000
+                    })
+                    .animate({
+                        borderWidth: 10
+                    }, {
+                        queue: true,
+                        duration: 5000,
+                        complete: function a() {
+                            alert("宽度设置完成")
+                        }
+                    });
+            });
+            //停止动画
+            $('#btn2').click(function () {
+                $('.t').find('.t1').stop();
+                $('.t').find('.t2').stop();
+            });
+            //关闭div
+            $('#btn4').click(function () {
+                $('.t').find('.t4').animate({
+                    width: '0px',
+                    display: 'none'
+                }, {
+                    queue: false,
+                    duration: 2000
+                }).animate({
+                    height: '0px'
+                }, {
+                    queue: false,
+                    duration: 1900
+                });
+            });
+
+
+            //鼠标进入进出效果
+            $(".tt1").mouseenter(function () {
+                $('.tt1').animate({
+                    top: '-200px'
+                }, '50000');
+                $('.tt2').animate({
+                    top: '0px'
+                }, '50000');
+            });
+            $(".tt2").mouseout(function () {
+                $('.tt1').animate({
+                    top: '0px'
+                }, '50000');
+                $('.tt2').animate({
+                    top: '200px'
+                }, '50000');
+            });
+
+            $(".tt33").mouseenter(function () {
+                $('.tt22').animate({
+                    top: '150px'
+                }, '50000');
+            });
+
+            $(".tt33").mouseout(function () {
+                $('.tt22').animate({
+                    top: '200px'
+                }, '50000');
+            });
+        })
+    </script>
+
+
+
+
+</html>

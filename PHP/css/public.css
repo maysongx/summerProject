@@ -1,0 +1,26 @@
+body {
+    color: #4a4a4a;
+    font-size: 16px;
+    text-align: center;
+}
+
+.public {
+    width: 1200px;
+    margin: 0 auto;
+    color: #4a4a4a;
+}
+
+.title {
+    font-size: 28px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.item {
+    border-bottom: 1px red solid;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 30px auto;
+}

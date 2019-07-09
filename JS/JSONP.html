@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>JSONP使用</title>
+		<script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+	</head>
+
+	<body style="width: 90%; margin: 0 auto;">
+		<form id="form1" runat="server">
+			<div>
+				<h4>JSONP教程:Jsonp(JSON with Padding) 是 json 的一种"使用模式"，可以让网页从别的域名（网站）那获取资料，即跨域读取数据</h4>
+				<h4>JSONP应用：服务端JSONP格式数据</h4> 如客户想访问 : http://www.runoob.com/try/ajax/jsonp.php?jsonp=callbackFunction
+				<br /> 假设客户期望返回JSON数据：["customername1","customername2"]
+				<br /> 真正返回到客户端的数据显示为: callbackFunction(["customername1","customername2"])。<br /> 服务端文件jsonp.php代码为：
+				<img src="/JS/images/jsonp.php.png" /><br />
+
+				<h4>JSONP应用： 客户端实现 callbackFunction 函数</h4>
+				<div id="divCustomers"></div>
+
+				<h4>JSONP应用： JQuery使用JSONP</h4>
+				<div id="divCustomers2"></div>
+			</div>
+
+		</form>
+
+		<%-- 客户端实现 callbackFunction 函数--%>
+		<script type="text/javascript">
+			function callbackFunction(result, methodName) {
+				document.getElementById('divCustomers').innerHTML = result[0] + "," + result[1];
+			}
+		</script>
+		<script type="text/javascript" src="http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction"></script>
+
+		<%--JQuery使用JSONP--%>
+		<script type="text/javascript">
+			$(function() {
+				$.getJSON("http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=?", function(data) {
+					document.getElementById('divCustomers2').innerHTML = data[0] + "," + data[1];
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

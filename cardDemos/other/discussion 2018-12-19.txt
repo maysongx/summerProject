@@ -1,0 +1,44 @@
+tingxie app
+
+ref: 
+
+我们要做
+  一个听力练习页面 
+    注意，只是一个页面， 不包括导航
+  参考一个现有的应用的界面
+    https://www.skishore.me/inkstone/
+      https://www.skishore.me/inkstone/apps/media/demo.gif
+
+技术实现
+  一道道题切换的效果和逻辑: 
+    参考 http://dao.sg/superstar/lesson/2297659
+      yz_wordc2e.js
+        本地有一个"活动题库堆栈"i.e., the quiz paper. objQuestionStack, 里面存放的题的 id (可能当前实现是那题的内容也存进去了).
+        至于题的内容， 是存在于 "全部题库"objPresetQuestions里.
+        每次从活动题库底部取一道题出来做 （从而活动题库存量减少）
+        (事件: 每当活动题库存量减少时，检查)当题库数量减少到一定程度里，
+
+          先向线上(全部题库里面的题 只有id)请求更多的题(的 id)，来补充活动题库. remote
+          其次， 如果没有请求到足够多的补充题目， 那么就随机地去 "全部题库" 里取题来做.local
+        
+        本地有一个"全部题库", 它没有进， 也没有出，是页面初始化时，就形成的。
+        
+        (事件：用户做完一题时) 提交一个 ajax 请求给服务器。
+  
+  描红的效果:
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@1.2/dist/hanzi-writer.min.js"></script>
+
+    <div id="character-target-div"></div>
+    var writer = HanziWriter.create('character-target-div', '测', {
+      width: 150,
+      height: 150,
+      showCharacter: false,
+      padding: 5
+    });
+    writer.quiz();
+
+
+
+
+
+

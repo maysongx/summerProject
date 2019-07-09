@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Bootstrap布局组件预览</title>
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+	</head>
+
+	<body>
+		<p class="content">
+			Bootstrap 字体图标(Glyphicons)：字体图标是在 Web 项目中使用的图标字体<br />
+
+			<img src="../images/fontIcon.png" /><br />
+			<br /> 字体图标列表:
+			<a href="http://www.runoob.com/try/demo_source/bootstrap3-glyph-icons.htm">点击这里，查看可用的字体图标列表。</a><br />
+			<br /> 字体图标的使用：如需使用图标，只需要简单地使用下面的代码即可(图标和文本之间保留适当的空间)
+			<br />
+			<img src="../images/fontIcon2.png" /><br />
+			<span class="glyphicon glyphicon-alert"></span>
+
+			<button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-sort-by-attributes"></span>
+                </button>
+			<button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                </button>
+			<button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-sort-by-order"></span>
+                </button>
+			<button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-sort-by-order-alt"></span>
+                </button>
+
+			<button type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-user"></span>User
+                </button>
+			<button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-user"></span>User
+                </button>
+			<button type="button" class="btn btn-default btn-xs">
+                    <span class="glyphicon glyphicon-user"></span>User
+                </button>
+
+		</p>
+
+		<p class="content">
+			Bootstrap 下拉菜单（Dropdowns）：下拉菜单是可切换的，是以列表格式显示链接的上下文菜单。这可以通过与
+			<a href="http://www.runoob.com/bootstrap/bootstrap-dropdown-plugin.html">下拉菜单（Dropdown） JavaScript 插件</a> 的互动来实现。<br /> 使用 class dropdown-header 向下拉菜单的标签区域添加标题<br />
+			<div class="dropdown">
+				<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+                        主题
+                          <span class="caret"></span>
+                    </button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">Java</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">数据通信/网络
+						</a>
+					</li>
+					<li role="presentation" class="divider"></li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+					</li>
+				</ul>
+			</div>
+		</p>
+
+		<p class="content">
+			Bootstrap 按钮组：按钮组允许多个按钮被堆叠在同一行上<br /> 可以通过
+			<a href="http://www.runoob.com/bootstrap/bootstrap-button-plugin.html"> Bootstrap 按钮（Button） 插件</a> 添加可选的 JavaScript 单选框和复选框样式行为。<br /> Bootstrap常用的类：
+			<br />
+
+			<img src="../images/button1.png" /><br /> 嵌套的按钮组：
+			<br />
+			<div class="btn-group">
+				<button type="button" class="btn btn-default">按钮 1</button>
+				<button type="button" class="btn btn-default">按钮 2</button>
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            下列
+                        <span class="caret"></span>
+                        </button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">下拉链接 1</a>
+						</li>
+						<li>
+							<a href="#">下拉链接 2</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</p>
+
+		<p class="content">
+			Bootstrap 按钮下拉菜单：如需向按钮添加下拉菜单，只需要简单地在在一个 .btn-group 中放置按钮和下拉菜单即可。您也可以使用 <span class="caret"></span> 来指示按钮作为下拉菜单<br />
+			<a href="http://www.runoob.com/bootstrap/bootstrap-button-dropdowns.html">更多按钮下拉菜单的例子</a>
+		</p>
+	</body>
+
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Bootstrap按钮组</title>
+		<!-- 包含头部信息用于适应不同设备 -->
+		<!--width 属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为 device-width 可以确保它能正确呈现在不同设备上-->
+		<!--initial-scale=1.0 确保网页加载时，以 1:1 的比例呈现，不会有任何的缩放。-->
+		<!--在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能。
+        通常情况下，maximum-scale=1.0 与 user-scalable=no 一起使用。
+        这样禁用缩放功能后，用户只能滚动屏幕，就能让您的网站看上去更像原生应用的感觉。-->
+		<meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no" />
+		<!--百度的静态资源库的 CDN 服务，访问速度更快、加速效果更明显、没有速度和带宽限制、永久免费,引入代码如下-->
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+	</head>
+
+	<body>
+
+		<div class="content">
+			<h4>Bootstrap按钮组：按钮组允许多个按钮被堆叠在同一行上。您可以通过 Bootstrap 按钮（Button） 插件 添加可选的 JavaScript 单选框和复选框样式行为。</h4> 使用按钮组常用的类：
+			<br />
+			<img src="../images/按钮组类.png" /><br />
+		</div>
+		<div class="content">
+			<h4>基本的按钮组:btn-group</h4>
+			<div class="btn-group">
+				<button type="button" class="btn btn-default">按钮1</button>
+				<button type="button" class="btn btn-default">按钮2</button>
+			</div>
+		</div>
+		<div class="content">
+			<h4>按钮工具栏：btn-toolbar</h4>
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">按钮1</button>
+					<button type="button" class="btn btn-default">按钮2</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">按钮3</button>
+					<button type="button" class="btn btn-default">按钮4</button>
+					<button type="button" class="btn btn-default">按钮5</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">按钮6</button>
+					<button type="button" class="btn btn-default">按钮7</button>
+				</div>
+			</div>
+
+		</div>
+		<div class="content">
+			<h4>按钮的大小:.btn-group-lg, .btn-group-sm, .btn-group-xs(这些 class 可应用到整个按钮组的大小调整，而不需要对每个按钮进行大小调整。)</h4>
+			<div class="btn-toolbar">
+				<div class="btn-group btn-group-lg">
+					<button type="button" class="btn btn-default">按钮1</button>
+					<button type="button" class="btn btn-default">按钮2</button>
+				</div>
+				<div class="btn-group btn-group-sm">
+					<button type="button" class="btn btn-default">按钮3</button>
+					<button type="button" class="btn btn-default">按钮4</button>
+					<button type="button" class="btn btn-default">按钮5</button>
+				</div>
+				<div class="btn-group btn-group-xs">
+					<button type="button" class="btn btn-default">按钮6</button>
+					<button type="button" class="btn btn-default">按钮7</button>
+				</div>
+			</div>
+
+		</div>
+		<div class="content">
+			<h4>按钮组的嵌套：您可以在一个按钮组内嵌套另一个按钮组，即，在一个 .btn-group 内嵌套另一个 .btn-group </h4>
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-default">按钮1</button>
+				<button type="button" class="btn btn-default">按钮2</button>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        下拉
+                        <span class="caret"></span>
+                    </button>
+
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">Java</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<h4>垂直的按钮组：添加btn-group-vertical类</h4>
+			<div class="btn-group-vertical">
+				<button type="button" class="btn btn-default">按钮1</button>
+				<button type="button" class="btn btn-default">按钮2</button>
+				<div class="btn-group-vertical">
+					<button type="button" class="btn btn-default dropdown-toggle" id="drop2" data-toggle="dropdown">
+                        下拉
+                          <span class="caret"></span>
+                    </button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">Java</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

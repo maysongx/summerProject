@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>SVG引入HTML的方法</title>
+    <meta name="keywords" content="关键字"/>
+    <meta name="description" content="描述"/>
+    <link href="/SVG/css/index.css?ver=1.0" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="content">
+    <div class="codeBlock">
+        <div class="bigTitle">SVG引入HTML的方法</div>
+
+        <p>
+            <span>embed方式</span>
+            <embed src="/SVG/images/cry.svg" width="100" height="100" type="image/svg+xml"
+                   pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+        </p>
+        <p>
+            <span>object方式</span>
+            <object data="/SVG/images/cry.svg" width="100" height="100" type="image/svg+xml"
+                    codebase="http://www.adobe.com/svg/viewer/install/"></object>
+        </p>
+        <p>
+            <span>iframe方式</span>
+            <iframe src="/SVG/images/cry.svg" width="100" height="100"></iframe>
+        </p>
+    </div>
+</div>
+</body>
+
+</html>

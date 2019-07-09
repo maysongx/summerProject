@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>eCharts基础知识</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/js/public.js?ver=1.0"></script>
+    <link href="/skin/default/css/public.css" rel="stylesheet" type="text/css"/>
+    <!--head头部公共设置结束-->
+
+    <style type="text/css">
+        .tab1 {
+            width: 900px;
+            height: 300px;
+            border: 1px red solid;
+        }
+        
+        .auto-style1 {
+            width: 100%;
+        }
+        
+        .auto-style2 {
+            width: 314px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="public">
+        <div class="item">
+            <div class="title"><a href="http://www.cnblogs.com/songxia/p/6611605.html">eCharts基础知识（博客园）</a></div>
+            <a href="http://echarts.baidu.com/download-map.html">地图下载</a>
+            <h3>setOption方法:设置图表实例的配置项以及数据，万能接口，所有参数和数据的修改都可以通过setOption完成，ECharts 会合并新的参数和数据，然后刷新图表。如果开启动画的话，ECharts 找到两组数据之间的差异然后通过合适的动画去表现数据的变化。</h3>
+            <h3>setOption方法参数：(option: Object, notMerge: boolean, notRefreshImmediately: boolean)</h3> option:图表的配置项和数据，具体见
+            <a href="http://echarts.baidu.com/option.html">配置项手册。</a>
+            <br /> notMerge：可选，是否不跟之前设置的option进行合并，默认为false，即合并。
+            <br /> notRefreshImmediately：可选，在设置完option后是否不立即刷新画布，默认为false，即立即刷新。
+            <br />
+
+            <h3>绘制一个简单的图标</h3>
+            <div class="tab1" id="tab1"></div>
+        </div>
+        <div class="item">
+            <h3>各个组件的介绍</h3>
+            <br />
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2">组件</td>
+                    <td>说明</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">title</td>
+                    <td>标题组件，包含主标题和副标题</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">legend</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">图例组件展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">grid</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">直角坐标系内绘图网格，单个 grid 内最多可以放置上下两个 X 轴，左右两个 Y 轴.在 ECharts 3 中可以存在任意个 grid 组件</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">xAxis</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">直角坐标系 grid 中的 x 轴，单个 grid 组件最多只能放上下两个 x 轴</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">yAxis</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">直角坐标系 grid 中的 y 轴，单个 grid 组件最多只能放左右两个 y 轴</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">polar</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">极坐标系，可以用于散点图和折线图。每个极坐标系拥有一个</span>
+                        <a href="http://echarts.baidu.com/option.html#angleAxis" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">角度轴</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">和一个</span>
+                        <a href="http://echarts.baidu.com/option.html#radiusAxis" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">半径轴</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">radiusAxis</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">极坐标系的半径轴</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">angleAxis</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">极坐标系的角度轴</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">radar</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">雷达图坐标系组件，只适用于</span>
+                        <a href="http://echarts.baidu.com/option.html#series-radar" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">雷达图</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">。该组件等同
+                    ECharts 2 中的 polar 组件。因为 3 中的 polar 被重构为标准的极坐标组件，为避免混淆，雷达图使用 radar 组件作为其坐标系。</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">dataZoom</td>
+                    <td><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(41, 60, 85); border-radius: 4px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(249, 242, 244);">dataZoomx</code><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);"><span class="Apple-converted-space">&nbsp;</span>组件 用于对数据进行区域缩放，从而能自由关注细节的数据信息，或者概览数据整体
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">visualMap</td>
+                    <td><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(41, 60, 85); border-radius: 4px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(249, 242, 244);">visualMap</code><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);"><span class="Apple-converted-space">&nbsp;</span>是视觉映射组件，用于进行『视觉编码』，也就是将数据映射到视觉元素（视觉通道）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">tooltip</td>
+                    <td>提示框组件</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">toolbox</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">工具栏。内置有</span>
+                        <a href="http://echarts.baidu.com/option.html#toolbox.feature.saveAsImage" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">导出图片</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">，</span>
+                        <a href="http://echarts.baidu.com/option.html#toolbox.feature.dataView" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">数据视图</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">，</span>
+                        <a href="http://echarts.baidu.com/option.html#toolbox.feature.magicType" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">动态类型切换</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">，</span>
+                        <a href="http://echarts.baidu.com/option.html#toolbox.feature.dataZoom" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">数据区域缩放</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">，</span>
+                        <a href="http://echarts.baidu.com/option.html#toolbox.feature.reset" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">重置</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">五个工具。</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">geo</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">地理坐标系组件用于地图的绘制，支持在地理坐标系上绘制</span>
+                        <a href="http://echarts.baidu.com/option.html#series-scatter" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">散点图</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">，</span>
+                        <a href="http://echarts.baidu.com/option.html#series-lines" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);">线集</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">。</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">parallel</td>
+                    <td>
+                        <a href="https://en.wikipedia.org/wiki/Parallel_coordinates" style="box-sizing: border-box; font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; color: rgb(51, 122, 183); text-decoration: none; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(250, 250, 252);" target="_blank">平行坐标系（Parallel Coordinates）</a><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);"><span class="Apple-converted-space">&nbsp;</span>是一种常用的可视化高维数据的图表。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">parallelAxis</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">这个组件是平行坐标系中的坐标轴</span></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">timeline</td>
+                    <td><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(41, 60, 85); border-radius: 4px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(249, 242, 244);">timeline</code><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);"><span class="Apple-converted-space">&nbsp;</span>组件，提供了在多个<span class="Apple-converted-space">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(41, 60, 85); border-radius: 4px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(249, 242, 244);">ECharts
+                    option</code><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);"><span class="Apple-converted-space">&nbsp;</span>间进行切换、播放等操作的功能。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">series</td>
+                    <td><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);">系列列表。每个系列通过<span class="Apple-converted-space">&nbsp;</span></span><code style="box-sizing: border-box; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(41, 60, 85); border-radius: 4px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(249, 242, 244);">type</code><span style="color: rgb(51, 51, 51); font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 23.8px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(250, 250, 252);"><span class="Apple-converted-space">&nbsp;</span>决定自己的图表类型</span>
+                    </td>
+                </tr>
+            </table>
+            <br /> &nbsp;
+            <br />
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/skin/default/lib/echarts/echarts.min.js"></script>
+    <script type="text/javascript ">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('tab1'));
+        // 指定图表的配置项和数据
+        var option = {
+            //标题组件
+            title: {
+                text: 'ECharts 入门示例', //标题
+                subtext: "data from china",
+                sublink: "http://echarts.baidu.com/option.html#title",
+                subtarget: "blank",
+                textStyle: {
+                    color: "red",
+                    fontSize: 20
+                },
+                padding: 10,
+                itemGap: 6, //主副标题之间的间距。
+            },
+            tooltip: {},
+            //图例组件 图例组件展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            },
+            yAxis: {},
+
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 10, 36, 10, 10, 20]
+				}],
+            toolbox: {
+                show: true,
+                feature: {
+                    dataZoom: {},
+                    dataView: {
+                        readOnly: false
+                    },
+                    magicType: {
+                        type: ['line', 'bar']
+                    },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+
+</body>
+
+</html>

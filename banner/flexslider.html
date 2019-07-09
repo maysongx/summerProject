@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>flexslider</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+
+    <style type="text/css">
+        .flexslider {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border: 1px #e5e5e5 solid;
+        }
+        
+        .slides {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .slides li {
+            height: 400px;
+        }
+        
+        .flex-control-nav {
+            position: absolute;
+            bottom: 10px;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .flex-control-nav li {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin: 0 5px;
+            *display: inline;
+            zoom: 1;
+        }
+        
+        .flex-control-nav a {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            line-height: 40px;
+            overflow: hidden;
+            border: 1px #e5e5e5 solid;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .flex-control-nav .flex-active {
+            background-position: 0 0;
+            border: 1px red solid;
+        }
+        
+        .flex-direction-nav {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            top: 45%;
+        }
+        
+        .flex-direction-nav li a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            cursor: pointer;
+            position: absolute;
+        }
+        
+        .flex-direction-nav li a.flex-prev {
+            left: 40px;
+            background: url(/images/left.png) center center no-repeat;
+        }
+        
+        .flex-direction-nav li a.flex-next {
+            right: 40px;
+            background: url(/images/right.png) center center no-repeat;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="public">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background:url(/banner/images/banner1.jpg) 0 0 no-repeat;"></li>
+                <li style="background:url(/banner/images/banner2.jpg) 0 0 no-repeat;"></li>
+                <li style="background:url(/banner/images/banner3.jpg) 0 0 no-repeat;"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/lib/flexslider/js/jquery.flexslider.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.flexslider').flexslider({
+                directionNav: true,
+                pauseOnAction: false
+            });
+        });
+    </script>
+
+</body>
+
+</html>

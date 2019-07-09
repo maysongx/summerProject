@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@import "public";
+
+.syllabus {
+  .accordion {
+    width: 80%;
+    margin: 0 auto;
+    @include min-width();
+
+    .perPanel {
+      @include div-block();
+      margin: 20px 0;
+      @include border-radius();
+
+      .title {
+        @include div-block();
+        outline: none;
+        margin: 0;
+        height: 50px;
+        line-height: 50;
+        background-color: $highLight-color;
+        padding: 0 20px;
+        cursor: pointer;
+        color: white;
+        .tagIcon {
+          height: 100%;
+          @include flex-layout();
+          i {
+            font-size: $font-size-16;
+          }
+        }
+        .text {
+          font-size: $font-size-16;
+          margin-left: 10px;
+          display: block;
+          position: relative;
+          height: 100%;
+        }
+      }
+
+      .cont {
+        @include div-block();
+        padding: 0 40px;
+        background-color: white;
+        top: 0;
+        display: none;
+
+        .list {
+          .perItem {
+            @include div-block();
+            height: 60px;
+            line-height: 60px;
+            border-bottom: $border;
+
+            .tagIcon {
+              height: 100%;
+              @include flex-layout();
+              i {
+                font-size: $font-size-16;
+                color: $highLight-color;
+              }
+            }
+
+            .text {
+              font-size: $font-size-14;
+              margin-left: 10px;
+              display: block;
+              position: relative;
+            }
+
+            .btnGo {
+              color: $submain-color;
+            }
+          }
+          .perItem:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

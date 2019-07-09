@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>自适应视频页面</title>
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+
+    <!--css引入：引入当前页面样式文件-->  
+    <style>
+        /*引入css样式表*/
+        body,
+        html {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .room {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+        }
+        
+        .room .room_left {
+            float: left;
+            height: 100%;
+            background-color: yellow;
+            position: relative;
+            box-sizing: border-box;
+        }
+        
+        .room .room_right {
+            float: left;
+            width: 400px;
+            height: 100%;
+            margin-left: 20px;
+            box-sizing: border-box;
+            background-color: red;
+        }
+        
+        .video_area {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0px 10px;
+            background-color: fuchsia;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="room">
+        <div class="room_left">
+            <iframe src="" class="video_area" allowfullscreen="true" autostart="1" quality="high" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></iframe>
+        </div>
+        <div class="room_right">页面右侧</div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(window).resize(function () {
+                //设置左侧的宽度
+                var room_left = $(this).width() - $('.room_right').width() - 20;
+                $('.room_left').width(room_left);
+                //设置左侧播放视频区域最小宽度  如果超过了最小宽度，那么隐藏右侧的评论区
+                var cur_width = $(this).width();
+                if (room_left < 400) {
+                    $('.room_right').hide();
+                    $('.room_left').width(cur_width);
+                } else {
+                    $('.room_right').show();
+                    $('.room_left').width(room_left);
+                }
+
+                //初始化左侧视频框宽度 16:9
+                var video_width = $('.video_area').width();
+                var video_area_height = $('.video_area').width() * 9 / 16;
+                $('.video_area').css('height', video_area_height);
+
+            });
+            //初始化左侧宽度
+            var room_left = $(this).width() - $('.room_right').width() - 20;
+            $('.room_left').width(room_left);
+
+            //初始化左侧视频框宽度 16:9
+            var video_width = $('.video_area').width();
+            var video_area_height = $('.video_area').width() * 9 / 16;
+            $('.video_area').css('height', video_area_height);
+
+        });
+    </script>
+
+</body>
+
+</html>

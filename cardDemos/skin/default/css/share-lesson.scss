@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import "public";
+
+.share-lesson {
+  padding-top: 40px;
+  @include min-width();
+
+  .title {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .codeimg {
+    margin: 40px auto;
+
+    img {
+      width: calc(20% - 0px);
+      margin: 0 auto;
+    }
+  }
+
+  .smalltitle {
+    color: $submain-color;
+  }
+
+  .icons {
+    margin: 30px auto;
+    width: 80%;
+
+    .perIcon {
+      margin-bottom: 20px;
+
+      & > div {
+        background-color: white;
+        width: 60px;
+        height: 60px;
+        @include border-radius(50%);
+        border: $border;
+        margin: 0 auto;
+
+        .text-icon {
+          width: 30px;
+          height: 30px;
+          position: relative;
+          left: 14px;
+          top: 15px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .share-lesson {
+    .codeimg {
+      img {
+        width: calc(40% - 0px);
+        margin: 0 auto;
+      }
+    }
+  }
+}

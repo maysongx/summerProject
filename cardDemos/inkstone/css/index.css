@@ -1,0 +1,68 @@
+@charset "UTF-8";
+.index {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: yellow;
+  height: 200px;
+  border: 1px red solid;
+  width: 800px;
+  margin: 0 auto; }
+  .index .perItem {
+    width: 600px;
+    height: 150px;
+    background-color: yellow;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -306px;
+    cursor: pointer;
+    display: none; }
+    .index .perItem.initCard {
+      display: block;
+      background-color: red;
+      animation: initCard 1s;
+      -webkit-animation: initCard 1s;
+      /* Safari 和 Chrome */ }
+    .index .perItem.prevCard {
+      display: block;
+      background-color: green;
+      transform: translateX(-700px);
+      animation: prevCard 500ms;
+      -webkit-animation: prevCard 500ms;
+      /* Safari 和 Chrome */ }
+    .index .perItem.curCard {
+      display: block;
+      background-color: yellow;
+      animation: curCard 1s;
+      -webkit-animation: curCard 1s;
+      /* Safari 和 Chrome */ }
+
+@keyframes initCard {
+  0% {
+    transform: translateX(705px); }
+  50% {
+    transform: translateX(-45px); }
+  60% {
+    transform: translateX(45px); }
+  100% {
+    transform: translateX(0px); } }
+@keyframes curCard {
+  0% {
+    transform: translateX(20px); }
+  50% {
+    transform: translateX(-20x); }
+  100% {
+    transform: translateX(0px); } }
+@keyframes prevCard {
+  0% {
+    transform: translateX(0px); }
+  10% {
+    transform: translateX(45px); }
+  100% {
+    transform: translateX(-700px); } }
+
+/*# sourceMappingURL=index.css.map */

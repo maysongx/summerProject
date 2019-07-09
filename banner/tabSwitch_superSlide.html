@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--head头部公共设置开始-->
+    <meta charset="utf-8" />
+    <title>tab标签切换</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="关键字" />
+    <meta name="description" content="描述" />
+    <!--head头部公共设置结束-->
+    
+    
+    <style type="text/css">
+        /*整体布局设计*/
+        
+        .slideTxtBox {
+            width: 450px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .slideTxtBox .hd {
+            height: 30px;
+            line-height: 30px;
+            background: #f4f4f4;
+            padding: 0 10px 0 20px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .slideTxtBox .hd ul {
+            float: left;
+            position: absolute;
+            left: 20px;
+            top: -1px;
+            height: 32px;
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+        
+        .slideTxtBox .hd ul li {
+            float: left;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+        
+        .slideTxtBox .hd ul li.on {
+            height: 30px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-bottom: 2px solid #fff;
+        }
+        
+        .slideTxtBox .bd ul {
+            padding: 15px;
+            zoom: 1;
+            margin: 0px;
+            list-style-type: none;
+        }
+        
+        .slideTxtBox .bd li {
+            height: 24px;
+            line-height: 24px;
+        }
+        
+        .slideTxtBox .bd li .date {
+            float: right;
+            color: #999;
+        }
+        
+        .slideTxtBox .bd li a {
+            text-decoration: none;
+            color: #524F4F;
+            font-size: 10px;
+        }
+        
+        .slideTxtBox .bd li a:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="public">
+        <div class="title"><a href='http://www.superslide2.com/demo.html' target="_blank">例子以及参查看</a></div>
+        <div class="slideTxtBox">
+            <div class="hd">
+                <ul>
+                    <li>教育</li>
+                    <li>培训</li>
+                    <li>出国</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">中国打破了世界软件巨头规则</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">口语：会说中文就能说英语！</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">农场摘菜不如在线学外语好玩</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">学英语送ipad2,45天突破听说</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">学外语，上北外！</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">那些无法理解的荒唐事</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">名师教作文：３妙招巧写高分</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">耶鲁小子：教你备考SAT</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">施强：高端专业语言教学</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">【推荐】名校英语方法曝光！</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">2012高考“考点”大曝光!!</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">涨价仍爆棚假日旅游冰火两重天</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">澳大利亚八大名校招生说明会</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">2012世界大学排名新鲜出炉</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">新加坡留学，国际双语课程</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">高考后留学日本名校随你选</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">教育培训行业优势资源推介</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">即刻预约今年最后一场教育展</a>
+                    </li>
+                    <li><span class="date">2011-11-11</span>
+                        <a href="http://www.SuperSlide2.com" target="_blank">女友坚持警局完婚不抛弃</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--页面尾部加载公共js开始-->
+    <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+    <script type="text/javascript" src="/skin/default/lib/SuperSlide/js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--页面尾部加载公共js结束-->
+    <script type="text/javascript">
+        $(function () {
+            $(".slideTxtBox").slide();
+        });
+    </script>
+
+</body>
+
+</html>
