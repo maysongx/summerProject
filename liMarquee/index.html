@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>liMarquee无缝滚动插件</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/jquery.liMarquee.js"></script>
+  <link href="css/jquery.liMarquee.css" rel="stylesheet" />
+  <style>
+    .cont {
+      width: 600px;
+      margin: 30px auto;
+      overflow: hidden;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      width: 100%;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 0 20px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 18px;
+      /* 注意 display: inline-block; */
+      display: inline-block; 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cont">
+    <ul>
+      <li>测试数据1</li>
+      <li>测试数据2</li>
+      <li>测试数据3</li>
+      <li>测试数据4</li>
+      <li>测试数据5</li>
+      <li>测试数据6</li>
+      <li>测试数据7</li>
+      <li>测试数据8</li>
+      <li>测试数据9</li>
+      <li>测试数据10</li>
+    </ul>
+  </div>
+</body>
+<script>
+  $(function () {
+    $('.cont').liMarquee({
+      scrollamount: 160, //数值越大，滚动速度越大
+    });
+  });
+</script>
+
+</html>
