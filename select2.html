@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>select2Plugin下拉插件的使用</title>
+  <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+  <script type="text/javascript" src="/skin/default/lib/select2/js/select2.min.js"></script>
+  <link href="/skin/default/lib/select2/css/select2.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    .select2-container {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h1>观察控制台结果：</h1>
+    <h1>单选</h1>
+    <select name="select1" id="select1">
+      <option value="课程11">课程1</option>
+      <option value="课程22">课程2</option>
+      <option value="课程33">课程3</option>
+      <option value="课程44">课程4</option>
+      <option value="课程55">课程5</option>
+    </select>
+    <button onclick="javascript:console.log($('#select1').select2('data').text)">获取选中的值</button>
+    <button onclick="javascript:console.log($('#select1').select2('val'))">获取选中的value</button>
+    <p>获取选中的文本：$('#select1').select2('data').text</p>
+    <p>获取选中的value：$('#select1').select2('val')</p>
+    <h1>多选</h1>
+    <select name="select2" id="select2" multiple='multiple'>
+      <option value="课程11">课程1</option>
+      <option value="课程22">课程2</option>
+      <option value="课程33">课程3</option>
+      <option value="课程44">课程4</option>
+      <option value="课程55">课程5</option>
+    </select>
+    <button onclick="javascript:console.log($('#select2').select2('data'))">获取选中的值</button>
+    <button onclick="javascript:console.log($('#select2').select2('val'))">获取选中的value</button>
+    <p>获取选中的文本：$('#select2').select2('data')</p>
+    <p>获取选中的value值：$('#select2').select2('val')</p>
+  </div>
+  <script type="text/javascript">
+    $(function () {
+      //初始化插件
+      $('#select1').select2();
+      $('#select2').select2({
+        placeholder: "可以多选"
+      });
+      //设置默认选中值，如果是多选，可以设置数组
+      $('#select1').select2('val', '课程55')
+      $('#select2').select2('val', '课程55')
+    });
+  </script>
+</body>
+
+</html>
