@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>移动广告位</title>
+</head>
+
+<body>
+  <div class="adDialog" style='width: 100px;height: 100px;background-color: yellow;position: absolute;'></div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $.index = {
+        moveActionTimer: null,  //移动定时器
+        moveActionLeft: 0,
+        moveActionTop: 20,
+        init: function () {
+          var $obj = $(".adDialog");
+          $.index.adMove($obj);/*执行走动*/
+          $obj.mouseover(function () {
+            clearInterval($.index.moveActionTimer);
+          }).mouseout(function () {
+            $.index.adMove($obj);
+          });
+        },
+        adMove: function ($obj) {
+          var top_folg = false;/*控制高度-锁*/
+          var left_folg = true;/*控制宽度-锁*/
+          var win_width = $(window).width() - $obj.width();/*获取并计算浏览器初始宽度*/
+          var win_height = $(window).height() - $obj.height();/*获取并计算浏览器初始高度*/
+          $.index.moveActionTimer = setInterval(function () {
+            if (!top_folg) {
+              $.index.moveActionTop++;
+              if ($.index.moveActionTop >= win_height) {
+                top_folg = true;
+              }
+            } else {
+              $.index.moveActionTop--;
+              if ($.index.moveActionTop <= 0) {
+                top_folg = false;
+              }
+            }
+            if (left_folg) {
+              $.index.moveActionLeft++;
+              if ($.index.moveActionLeft >= win_width) {
+                left_folg = false;
+              }
+            } else {
+              $.index.moveActionLeft--;
+              if ($.index.moveActionLeft <= 0) {
+                left_folg = true;
+              }
+            }
+            $obj.animate({
+              left: $.index.moveActionLeft,
+              top: $.index.moveActionTop
+            }, 3);
+          }, 15);
+        },
+      }
+      $.index.init();
+    });
+
+  </script>
+</body>
+
+</html>
