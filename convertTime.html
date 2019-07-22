@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>时间与时间戳的相互转换</title>
+</head>
+
+<body>
+  <h1>控制台看结果</h1>
+  <script type="text/javascript" src="/skin/default/lib/jquery/jquery.min_v1.10.2.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $.timeConvert = {
+        init: function () {
+          //将指定日期转换为时间戳
+          var date1 = '2019-07-19 12:30:26'
+          console.log('将指定日期转换为时间戳', $.timeConvert.convertDateToTimeStamp(date1));
+
+          //获取当前时间的时间戳
+          var curTimeStamp = $.timeConvert.convertDateToTimeStamp();
+          console.log('获取当前时间的时间戳', curTimeStamp);
+
+          //将当前时间转换为日期
+          console.log('将当前时间转换为日期', $.timeConvert.convertTimeStampToDate(curTimeStamp).dateStr);
+
+          //往后推一天 24小时
+          var nextTimeStamp = $.timeConvert.convertDateToTimeStamp() + 24 * 60 * 60 * 1000;
+          console.log('后一天' + $.timeConvert.convertTimeStampToDate(nextTimeStamp).dateStr);
+
+          //往前推一天 24小时
+          var lastTimeStamp = $.timeConvert.convertDateToTimeStamp() - 24 * 60 * 60 * 1000;
+          console.log('前一天' + $.timeConvert.convertTimeStampToDate(lastTimeStamp).dateStr);
+          //2周后：14 * 24 * 60 * 60 * 1000
+
+        },
+
+        //将时间戳转换为时间 返回结果是对象
+        convertTimeStampToDate: function (timestamp) {
+          var time = new Date(timestamp);
+          var year = time.getFullYear(); //getFullYear方法以四位数字返回年份
+          var month = time.getMonth() + 1; // getMonth方法从 Date 对象返回月份 (0 ~ 11)，返回结果需要手动加一
+          var days = time.getDate(); // getDate方法从 Date 对象返回一个月中的某一天 (1 ~ 31)
+          var hours = time.getHours(); // getHours方法返回 Date 对象的小时 (0 ~ 23)
+          var minutes = time.getMinutes(); // getMinutes方法返回 Date 对象的分钟 (0 ~ 59)
+          var seconds = time.getSeconds(); // getSeconds方法返回 Date 对象的秒数 (0 ~ 59)
+
+          var data = {};
+          data.year = year;
+          data.month = month < 10 ? '0' + month : month;
+          data.days = days < 10 ? '0' + days : days;
+          data.hours = hours < 10 ? '0' + hours : hours;
+          data.minutes = minutes < 10 ? '0' + minutes : minutes;
+          data.seconds = seconds < 10 ? '0' + seconds : seconds;
+          return {
+            data: data,
+            dateStr: data.year + '-' + data.month + '-' + data.days + ' ' + data.hours + ':' + data.minutes + ':' + data.seconds
+          };
+        },
+        //将时间2019-12-12 12:12:12转换为时间戳  如果参数为空，则将当前时间转换为时间戳
+        convertDateToTimeStamp: function (DateTime) {
+          if (DateTime && DateTime.length > 0) {
+            return new Date(DateTime).getTime();
+          } else {
+            return new Date().getTime();
+          }
+        },
+      }
+      $.timeConvert.init();
+    });
+  </script>
+</body>
+
+</html>
